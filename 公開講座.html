@@ -1,0 +1,3034 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>琉球大学 公開講座 — 仕事が終わらないのは、AIを知らないから。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="03.png" type="image/gif">
+
+  <style>
+    :root {
+      --blue: #1f4fb0;
+      --blue-deep: #173d8a;
+      --blue-soft: #eef3fb;
+      --blue-soft-2: #e3ecf9;
+      --yellow: #febf1c;
+      --yellow-hover: #f5b40b;
+      --ink: #1a1f2c;
+      --ink-2: #4a5468;
+      --line: #dde3ee;
+      --bg: #ffffff;
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      font-size: 19px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Header Styles */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 36px;
+      border-bottom: 1px solid #eef0f5;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand .logo-text {
+      display: flex;
+      flex-direction: column;
+      border-left: 2px solid var(--line);
+      padding-left: 12px;
+    }
+
+    .brand .logo-text .univ {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--blue-deep);
+      letter-spacing: 0.05em;
+    }
+
+    .brand .logo-text .course {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--ink-2);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1f2c;
+    }
+
+    .nav a:hover {
+      color: var(--blue);
+    }
+
+    /* Language Switcher toggle button */
+    .lang-switcher {
+      display: inline-flex;
+      background: var(--blue-soft);
+      padding: 4px;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      color: var(--ink-2);
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--blue);
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(31, 79, 176, 0.2);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 8px;
+      padding: 12px 22px;
+      font-weight: 700;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      transition: background .15s ease, transform .05s ease, box-shadow .15s ease;
+      letter-spacing: .02em;
+    }
+
+    @keyframes btn-pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(254, 191, 28, 0.8);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 0 20px rgba(254, 191, 28, 0);
+        transform: scale(1.03);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(254, 191, 28, 0);
+        transform: scale(1);
+      }
+    }
+
+    .btn-yellow {
+      background: linear-gradient(135deg, #ffd900 0%, #febf1c 50%, #f5b40b 100%);
+      color: #1a1f2c;
+      font-size: 26px;
+      padding: 24px 64px;
+      font-weight: 900;
+      border-radius: 16px;
+      border: 3px solid #fff;
+      box-shadow: 0 12px 32px rgba(254, 191, 28, 0.6);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      animation: btn-pulse 2s infinite;
+    }
+
+    .btn-yellow:hover {
+      background: linear-gradient(135deg, #ffe242 0%, #ffd900 50%, #febf1c 100%);
+      transform: scale(1.08) translateY(-4px);
+      box-shadow: 0 24px 48px rgba(254, 191, 28, 0.8);
+      animation: none;
+    }
+
+    .btn-blue {
+      background: var(--blue);
+      color: #fff;
+      padding: 16px 28px;
+      font-size: 18px;
+    }
+
+    .btn-blue:hover {
+      background: var(--blue-deep);
+    }
+
+    .btn-outline {
+      background: #fff;
+      color: var(--blue);
+      border: 1.5px solid var(--blue);
+      padding: 16px 28px;
+      font-size: 18px;
+    }
+
+    .btn-outline:hover {
+      background: var(--blue-soft);
+    }
+
+    .header-cta {
+      padding: 14px 28px !important;
+      font-size: 18px !important;
+      border: 2px solid #fff !important;
+      border-radius: 12px !important;
+      font-weight: 900 !important;
+      animation: btn-pulse 2s infinite !important;
+    }
+
+    .header-cta:hover {
+      transform: scale(1.08) translateY(-2px) !important;
+      box-shadow: 0 12px 24px rgba(254, 191, 28, 0.8) !important;
+      animation: none !important;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 36px 100px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      max-width: 1280px;
+      margin: 0 auto;
+      z-index: 1;
+    }
+
+    .hero-left {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+
+    .hero-eyebrow {
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: .04em;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0 0 16px;
+      line-height: 1.25;
+      letter-spacing: -.02em;
+      font-weight: 800;
+      color: #14192a;
+    }
+
+    .hero h1 .accent-underline {
+      background-image: linear-gradient(transparent 80%, var(--yellow) 80%, var(--yellow) 96%, transparent 96%);
+      background-repeat: no-repeat;
+    }
+
+    .hero-sub {
+      margin: 8px 0 24px;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: .02em;
+    }
+
+    .hero-lead {
+      color: var(--ink-2);
+      font-size: 18px;
+      line-height: 1.8;
+      margin: 0 0 32px;
+      max-width: 520px;
+    }
+
+    .hero-badges {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 32px;
+      max-width: 580px;
+    }
+
+    .hbadge {
+      text-align: center;
+      padding: 6px 4px;
+    }
+
+    .hbadge img {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 8px;
+    }
+
+    .hbadge h4 {
+      margin: 0 0 4px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .hbadge p {
+      margin: 0;
+      font-size: 12px;
+      color: var(--ink-2);
+      line-height: 1.4;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-ctas .btn {
+      min-width: 200px;
+    }
+
+    .arrow-r::after {
+      content: "→";
+      margin-left: 8px;
+    }
+
+    /* Collage Section on the Right */
+    .hero-collage {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      width: 700px;
+      min-height: 480px;
+      display: flex;
+      justify-content: center;
+      opacity: 0.25;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero-collage .dots-tl,
+    .hero-collage .dots-br {
+      position: absolute;
+      width: 92px;
+      height: 92px;
+      background-image: radial-gradient(circle, #b9c6e0 1.6px, transparent 1.6px);
+      background-size: 11px 11px;
+    }
+
+    .hero-collage .dots-tl {
+      top: 0;
+      left: 10px;
+    }
+
+    .hero-collage .dots-br {
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .hero-collage .sq-tr {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: #c7d3eb;
+      top: -10px;
+      right: 50px;
+      border-radius: 4px;
+    }
+
+    .hero-collage .sq-yellow {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      background: var(--yellow);
+      bottom: 10px;
+      left: 60px;
+      z-index: 4;
+      border-radius: 4px;
+    }
+
+    .hero-collage .photo-main {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      width: 440px;
+      height: 310px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: 0 16px 36px rgba(20, 30, 60, .18);
+      border: 4px solid white;
+    }
+
+    .hero-collage .photo-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-collage .photo-shurijo {
+      position: absolute;
+      top: 230px;
+      left: 40px;
+      width: 190px;
+      height: 140px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: 0 12px 28px rgba(20, 30, 60, .2);
+      z-index: 3;
+      border: 4px solid white;
+    }
+
+    .hero-collage .photo-shurijo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-collage .photo-class {
+      position: absolute;
+      top: 300px;
+      right: 40px;
+      width: 260px;
+      height: 160px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: 0 12px 28px rgba(20, 30, 60, .15);
+      border: 4px solid white;
+      z-index: 2;
+    }
+
+    .hero-collage .photo-class img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-collage .tag-chip {
+      position: absolute;
+      top: 170px;
+      left: 200px;
+      width: 130px;
+      height: 130px;
+      background: var(--blue);
+      color: #fff;
+      border-radius: 50%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 1.4;
+      z-index: 5;
+      box-shadow: 0 12px 24px rgba(20, 40, 90, .4);
+    }
+
+    /* Why AI */
+    .why-ai {
+      background: var(--blue-deep);
+      color: #fff;
+      padding: 80px 36px;
+    }
+
+    .why-content {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 40px auto 0;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .why-item h3 {
+      font-size: 19px;
+      color: var(--yellow);
+      margin: 0 0 10px;
+      font-weight: 700;
+    }
+
+    .why-item p {
+      font-size: 15px;
+      opacity: 0.88;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .data-visual {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 32px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      position: relative;
+    }
+
+    .graph-label {
+      font-size: 11px;
+      color: var(--yellow);
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sim-toggle-container {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 6px;
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .sim-toggle-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 10px 24px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .sim-toggle-btn.active {
+      background: #ffffff;
+      color: var(--blue-deep);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .sim-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .metric-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 14px 18px;
+      transition: all 0.3s ease;
+    }
+
+    .metric-card.highlight {
+      border-color: rgba(254, 191, 28, 0.3);
+      background: rgba(254, 191, 28, 0.05);
+    }
+
+    .metric-card .title {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .metric-card .value {
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .metric-card.highlight .value {
+      color: var(--yellow);
+    }
+
+    .metric-card .unit {
+      font-size: 13px;
+      font-weight: 500;
+      margin-left: 2px;
+    }
+
+    .chart-wrapper {
+      position: relative;
+      height: 200px;
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .y-axis-labels {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 600;
+      text-align: right;
+      width: 40px;
+      padding-bottom: 24px;
+    }
+
+    .chart-content {
+      flex: 1;
+      position: relative;
+      height: 100%;
+      border-bottom: 1.5px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .grid-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+      pointer-events: none;
+    }
+
+    .chart-cols {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      z-index: 2;
+    }
+
+    .chart-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 14%;
+      height: 100%;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .bar-container {
+      width: 100%;
+      height: calc(100% - 24px);
+      position: relative;
+      border-radius: 4px 4px 0 0;
+      overflow: hidden;
+    }
+
+    .bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 4px 4px 0 0;
+      transition: height 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .bar-bg {
+      height: 100%;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .bar-active {
+      height: 20%;
+      background: var(--yellow);
+    }
+
+    .line-dot {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #ff4d4d;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      z-index: 4;
+      transition: bottom 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      pointer-events: none;
+      transform: translate(-50%, 50%);
+      left: 50%;
+      box-shadow: 0 0 8px rgba(255, 77, 77, 0.5);
+    }
+
+    .year-label {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 6px;
+      font-weight: 700;
+      height: 18px;
+    }
+
+    .chart-svg-overlay {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: calc(100% - 24px);
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .chart-legend {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 12px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-color {
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      border-radius: 2px;
+    }
+
+    .chart-tooltip {
+      position: absolute;
+      background: #14192a;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 11px;
+      color: #ffffff;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(-50%, -100%) scale(0.95);
+      transition: all 0.15s ease;
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      line-height: 1.4;
+    }
+
+    .chart-tooltip::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 6px 6px 0;
+      border-style: solid;
+      border-color: #14192a transparent;
+      display: block;
+      width: 0;
+    }
+
+    .chart-tooltip.active {
+      opacity: 1;
+      transform: translate(-50%, -115%) scale(1);
+    }
+
+    /* Producer/Instructor Info */
+    .instructor {
+      background: var(--blue-soft);
+      padding: 72px 36px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .instructor-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .instructor-photo-box {
+      text-align: center;
+    }
+
+    .instructor-photo {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 8px 20px rgba(20, 30, 60, 0.12);
+      margin: 0 auto 16px;
+      background: #fff;
+    }
+
+    .instructor-title {
+      font-size: 14px;
+      color: var(--blue-deep);
+      font-weight: 800;
+      margin-bottom: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    .instructor-name {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 0 0 12px;
+    }
+
+    .instructor-message {
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(20, 30, 60, 0.04);
+    }
+
+    .instructor-message::before {
+      content: "";
+      position: absolute;
+      top: 40px;
+      left: -12px;
+      border-width: 12px 12px 12px 0;
+      border-style: solid;
+      border-color: transparent #ffffff transparent transparent;
+    }
+
+    .instructor-message h3 {
+      margin: 0 0 14px;
+      font-size: 20px;
+      color: var(--blue);
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .instructor-text {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--ink-2);
+      margin: 0 0 20px;
+    }
+
+    .instructor-bio {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: #5a667c;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      margin: 0;
+    }
+
+    /* Course Content (Two distinct vertical blocks: 1. Table, 2. Benefits) */
+    .courses {
+      padding: 80px 36px;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+    }
+
+    .courses-h {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      border-bottom: 2px solid var(--blue);
+      padding-bottom: 12px;
+    }
+
+    .courses-h h2 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--blue-deep);
+    }
+
+    .courses-h .sub {
+      color: var(--ink-2);
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .course-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .course-table {
+      min-width: 760px;
+      font-size: 16px;
+      background: #fff;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .course-row {
+      display: grid;
+      grid-template-columns: 60px 1.5fr 3.5fr 1fr 1fr;
+      align-items: stretch;
+    }
+
+    .course-row+.course-row {
+      border-top: 1px solid var(--line);
+    }
+
+    .course-row .num {
+      background: var(--blue);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 24px;
+    }
+
+    .course-row .title-cell {
+      padding: 16px;
+      font-weight: 800;
+      border-right: 1px solid var(--line);
+      color: var(--blue-deep);
+      display: flex;
+      align-items: center;
+    }
+
+    .course-row .desc-cell {
+      padding: 16px;
+      border-right: 1px solid var(--line);
+      color: var(--ink-2);
+      display: flex;
+      align-items: center;
+      line-height: 1.6;
+    }
+
+    .course-row .date-cell {
+      padding: 12px 8px;
+      color: var(--blue-deep);
+      font-weight: 700;
+      font-size: 14px;
+      text-align: center;
+      border-right: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #fafbfc;
+    }
+
+    .course-row .date-cell:last-child {
+      border-right: none;
+    }
+
+    .course-row .date-cell .t {
+      color: var(--ink-2);
+      font-weight: 500;
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    /* Separate row layout for "What you will learn" */
+    .skills-card-wide {
+      background: var(--blue-soft);
+      border-radius: 16px;
+      padding: 40px;
+      border: 1px solid #d6e1f3;
+    }
+
+    .skills-card-wide h3 {
+      color: var(--blue-deep);
+      font-size: 24px;
+      font-weight: 800;
+      margin: 0 0 24px;
+      text-align: center;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .skills-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid rgba(31, 79, 176, 0.1);
+    }
+
+    .skills-item::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      border-radius: 4px;
+      background: #fff;
+      border: 2px solid var(--blue);
+      margin-top: 3px;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'><path d='M4 9.5l3.2 3.2L14 5.8' fill='none' stroke='%231f4fb0' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+      background-size: 14px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .skills-text-box h4 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .skills-text-box p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--ink-2);
+      line-height: 1.5;
+    }
+
+    .skills-note {
+      color: var(--ink-2);
+      font-size: 14px;
+      text-align: center;
+      margin: 24px 0 0;
+      font-weight: 500;
+    }
+
+    /* Strengths */
+    .strengths {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      margin: 32px auto;
+      max-width: 1200px;
+      padding: 48px 40px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+    }
+
+    .strengths h2 {
+      text-align: center;
+      font-size: 26px;
+      font-weight: 800;
+      margin: 0 0 36px;
+      color: var(--blue-deep);
+    }
+
+    .str-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .str-col {
+      text-align: center;
+      padding: 12px;
+    }
+
+    .str-col img {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 16px;
+    }
+
+    .str-col h4 {
+      font-size: 18px;
+      font-weight: 800;
+      margin: 0 0 10px;
+      color: var(--ink);
+    }
+
+    .str-col p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--ink-2);
+      line-height: 1.6;
+    }
+
+    /* Testimonial Previews */
+    .testimonials-preview {
+      background: #f8fafc;
+      padding: 80px 36px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .testimonials-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonials-preview h2 {
+      text-align: center;
+      font-size: 26px;
+      font-weight: 800;
+      margin: 0 0 8px;
+      color: var(--blue-deep);
+    }
+
+    .testimonials-sub {
+      text-align: center;
+      font-size: 15px;
+      color: var(--ink-2);
+      margin-bottom: 40px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .review-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.02);
+    }
+
+    .review-stars {
+      color: var(--yellow);
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .review-text {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink);
+      margin: 0 0 20px;
+      font-weight: 500;
+    }
+
+    .review-user {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px dashed var(--line);
+      padding-top: 16px;
+    }
+
+    .review-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .review-info {
+      text-align: left;
+    }
+
+    .review-info .name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .review-info .meta {
+      font-size: 12px;
+      color: var(--ink-2);
+    }
+
+    /* Integrated About + Pricing & Format section */
+    .pricing {
+      padding: 80px 36px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 40px;
+    }
+
+    .pricing-h {
+      grid-column: 1/-1;
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--blue-deep);
+    }
+
+    .price-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 36px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .price-meta-item {
+      background: var(--blue-soft);
+      border-radius: 10px;
+      padding: 14px 18px;
+      border: 1px solid rgba(31, 79, 176, 0.08);
+    }
+
+    .price-meta-item .p-label {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--blue-deep);
+      margin-bottom: 4px;
+    }
+
+    .price-meta-item .p-value {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .price-amount-box {
+      background: #fdfaf2;
+      border: 2px dashed var(--yellow);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .price-amount-box .tags {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .price-amount-box .tags span {
+      background: var(--blue-deep);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 15px;
+    }
+
+    .price-amount-box .fee-title {
+      font-size: 14px;
+      color: var(--ink-2);
+      font-weight: 700;
+    }
+
+    .price-amount-box .fee-value {
+      font-size: 40px;
+      font-weight: 900;
+      color: var(--blue-deep);
+      margin: 4px 0;
+    }
+
+    .price-amount-box .fee-value .yen {
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .price-amount-box .fee-value .tax {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-2);
+    }
+
+    .price-amount-box .payment-info {
+      font-size: 12px;
+      color: var(--ink-2);
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .price-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .price-bullets li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--ink-2);
+      font-weight: 600;
+    }
+
+    .price-bullets li::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      background: var(--blue);
+      border-radius: 50%;
+      flex-shrink: 0;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'><path d='M4 9.5l3.2 3.2L14 5.8' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+      background-size: 14px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .venue-card {
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+    }
+
+    .venue-map-area {
+      width: 100%;
+      height: 260px;
+      background: #eaeaea;
+    }
+
+    .venue-map-area iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .venue-info-box {
+      padding: 24px;
+      background: var(--blue-deep);
+      color: #fff;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .venue-info-box .v-label {
+      font-size: 11px;
+      opacity: 0.8;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .venue-info-box h4 {
+      font-size: 20px;
+      margin: 4px 0 8px;
+      font-weight: 800;
+    }
+
+    .venue-info-box p {
+      font-size: 13.5px;
+      opacity: 0.9;
+      margin: 0 0 16px;
+      line-height: 1.5;
+    }
+
+    .venue-info-box .access-btn {
+      background: #fff;
+      color: var(--blue-deep);
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.2s;
+    }
+
+    .venue-info-box .access-btn:hover {
+      background: var(--blue-soft);
+    }
+
+    .venue-info-box .access-btn::after {
+      content: "→";
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 64px 36px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .faq h2 {
+      font-size: 26px;
+      font-weight: 800;
+      margin: 0 0 24px;
+      text-align: center;
+      color: var(--blue-deep);
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--line);
+      padding: 18px 8px;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: 24px 1fr 24px;
+      gap: 10px 18px;
+      align-items: center;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-item .q-mark {
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .faq-item .q {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--ink);
+    }
+
+    .faq-item .a {
+      color: var(--ink-2);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .faq-item .chev {
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink-2);
+      transition: transform .2s ease;
+      font-size: 14px;
+    }
+
+    /* Application Email Box Section */
+    .apply-section {
+      background: #fefcf5;
+      border: 3px solid var(--yellow);
+      padding: 56px 40px;
+      border-radius: 20px;
+      max-width: 900px;
+      margin: 40px auto;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(254, 191, 28, 0.15);
+    }
+
+    .apply-section h3 {
+      font-size: 28px;
+      color: var(--blue-deep);
+      font-weight: 800;
+      margin: 0 0 16px;
+    }
+
+    .apply-section p {
+      font-size: 16px;
+      color: var(--ink-2);
+      margin: 0 0 32px;
+      line-height: 1.8;
+    }
+
+    .email-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--blue);
+      color: #fff !important;
+      font-size: 24px;
+      font-weight: 800;
+      padding: 18px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(31, 79, 176, 0.3);
+      transition: all 0.2s;
+    }
+
+    .email-link:hover {
+      background: var(--blue-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(31, 79, 176, 0.4);
+    }
+
+    .email-link img {
+      width: 32px;
+      height: 32px;
+      filter: invert(1);
+    }
+
+    .email-note {
+      font-size: 13px;
+      color: var(--ink-2);
+      margin-top: 16px;
+      font-weight: 600;
+    }
+
+    /* Bottom CTA */
+    .cta-band {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--blue-deep) 0%, #2a69df 100%);
+      color: #fff;
+      min-height: 320px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .cta-band::after {
+      content: "";
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .cta-band::before {
+      content: "";
+      position: absolute;
+      bottom: -100px;
+      right: 40%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .cta-band .left {
+      padding: 64px 36px 64px 64px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cta-band h2 {
+      font-size: 36px;
+      margin: 0 0 24px;
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: -.01em;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .cta-band .right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-band .right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .cta-band .right::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(23, 61, 138, 1) 0%, rgba(42, 105, 223, 0) 40%);
+      z-index: 1;
+    }
+
+    .cta-band .btn-yellow {
+      min-width: 280px;
+    }
+
+    /* Footer */
+    .site-footer {
+      padding: 40px 36px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .site-footer .brand img {
+      height: 44px;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      color: var(--ink-2);
+      font-weight: 600;
+    }
+
+    .footer-nav a:hover {
+      color: var(--blue);
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--ink-2);
+      font-weight: 500;
+    }
+
+    /* Testimonials Interactive Modal Window */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(10, 15, 30, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 16px;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-window {
+      background: #ffffff;
+      border-radius: 16px;
+      max-width: 720px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+      padding: 36px;
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+    }
+
+    .modal-overlay.active .modal-window {
+      transform: translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--blue-soft);
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--blue-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+    }
+
+    .modal-close:hover {
+      background: var(--line);
+    }
+
+    .modal-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--blue-deep);
+      margin-bottom: 24px;
+      text-align: center;
+      border-bottom: 1.5px solid var(--line);
+      padding-bottom: 12px;
+    }
+
+    .modal-content-area {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .modal-review-item {
+      border-bottom: 1.5px dashed var(--line);
+      padding-bottom: 20px;
+    }
+
+    .modal-review-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .modal-review-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .modal-reviewer-title {
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    .modal-reviewer-tag {
+      background: var(--blue-soft);
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      color: var(--blue-deep);
+      font-weight: 700;
+    }
+
+    .modal-review-text {
+      font-size: 14.5px;
+      color: var(--ink-2);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Floating Banner CTA */
+    .floating-banner {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 90;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 16px 20px;
+      border-radius: 16px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+      border: 3px solid var(--yellow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      animation: float-up 0.8s cubic-bezier(0.25, 1, 0.5, 1) 1.5s forwards;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @keyframes float-up {
+      from { transform: translateY(120px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    }
+
+    .floating-banner-text {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--blue-deep);
+      text-align: center;
+      margin: 0;
+      line-height: 1.4;
+      letter-spacing: 0.02em;
+    }
+
+    .floating-banner-text span {
+      color: #ff4d4d;
+      font-size: 12px;
+    }
+
+    .floating-banner .btn-yellow {
+      font-size: 18px;
+      padding: 12px 32px;
+      min-width: 0;
+      animation: btn-pulse 2s infinite;
+    }
+
+    .floating-banner-close {
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      width: 28px;
+      height: 28px;
+      background: var(--ink);
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: background 0.2s, transform 0.2s;
+      z-index: 91;
+      padding-bottom: 2px;
+    }
+    
+    .floating-banner-close:hover {
+      background: #ff4d4d;
+      transform: scale(1.1);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1100px) {
+      .hero {
+        padding: 48px 24px;
+        gap: 36px;
+        grid-template-columns: 1fr;
+      }
+
+      .hero-collage {
+        min-height: 440px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .why-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .instructor-wrap {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+      }
+
+      .instructor-message::before {
+        display: none;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .str-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .pricing {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .site-footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+      }
+
+      .footer-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .floating-banner {
+        bottom: 0;
+        right: 0;
+        left: 0;
+        border-radius: 0;
+        border: none;
+        border-top: 3px solid var(--yellow);
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 12px 16px;
+        gap: 8px;
+        animation: float-up-mobile 0.8s cubic-bezier(0.25, 1, 0.5, 1) 1.5s forwards;
+      }
+      @keyframes float-up-mobile {
+        from { transform: translateY(100px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; pointer-events: auto; }
+      }
+      .floating-banner-text {
+        font-size: 12px;
+        text-align: left;
+      }
+      .floating-banner-text span {
+        font-size: 10px;
+      }
+      .floating-banner .btn-yellow {
+        font-size: 14px;
+        padding: 10px 16px;
+      }
+      .floating-banner-close {
+        top: -16px;
+        left: auto;
+        right: 12px;
+        width: 26px;
+        height: 26px;
+        font-size: 14px;
+      }
+
+      .site-header {
+        padding: 12px 20px;
+      }
+
+      .brand img {
+        height: 42px;
+      }
+
+      .brand .logo-text {
+        display: none;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 28px !important;
+        white-space: normal !important;
+        word-break: break-all !important;
+      }
+
+      .hero-collage {
+        display: none;
+      }
+
+      .why-ai {
+        padding: 48px 20px;
+      }
+
+      .data-visual {
+        padding: 20px;
+      }
+
+      .sim-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .strengths {
+        padding: 32px 20px;
+      }
+
+      .str-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonials-preview {
+        padding: 48px 20px;
+      }
+
+      .pricing {
+        padding: 48px 20px;
+      }
+
+      .price-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .faq {
+        padding: 48px 20px;
+      }
+
+      .apply-section {
+        padding: 36px 20px;
+      }
+
+      .email-link {
+        font-size: 18px;
+        padding: 14px 28px;
+      }
+
+      .cta-band {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .cta-band .left {
+        padding: 40px 24px;
+        text-align: center;
+        align-items: center;
+      }
+
+      .cta-band h2 {
+        font-size: 26px;
+      }
+
+      .cta-band .right {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="brand">
+      <!-- Ryukyu University Official Logo Integration -->
+      <img src="03.png" alt="University of the Ryukyus Logo">
+      <div class="logo-text">
+        <span class="univ" data-i18n="header-brand-univ">琉球大学</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <!-- Language Toggle Controller -->
+      <div class="lang-switcher">
+        <button class="lang-btn active" id="lang-ja" onclick="changeLanguage('ja')">日本語</button>
+        <button class="lang-btn" id="lang-en" onclick="changeLanguage('en')">EN</button>
+      </div>
+      <button class="btn btn-yellow header-cta" onclick="window.open('https://ercll.u-ryukyu.narayun.jp', '_blank')" data-i18n="cta-btn">今すぐ申し込む</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow" data-i18n="hero-eyebrow">ビジネスパーソン・経営者のための</div>
+
+      <h1 style="font-size: calc(2.0rem + 2.0vw); line-height: 1.3; word-break: keep-all; overflow-wrap: break-word;">
+        <span class="accent-underline" style="display: inline-block;" data-i18n="hero-title-1">仕事が終わらないのは、</span><br>
+        <span class="accent-underline" style="display: inline-block; margin-top: 8px;"
+          data-i18n="hero-title-2">AIを知らないから。</span>
+      </h1>
+
+      <div class="hero-sub" data-i18n="hero-subtitle">琉球大学 公開講座</div>
+
+      <p class="hero-lead" data-i18n="hero-lead-text">
+        「人手が足りない」と嘆く前に、AIという信頼できる副操縦士を。<br>
+        全10回の厳選されたステップで、あなたの実務を「AIネイティブ」へ即日アップデートします。
+      </p>
+      <div class="hero-badges">
+        <div class="hbadge">
+          <img src="https://img.icons8.com/fluency/96/ok.png" alt="Check Icon">
+          <h4 data-i18n="badge-1-h">初心者歓迎</h4>
+          <p data-i18n="badge-1-p">基礎から丁寧に</p>
+        </div>
+        <div class="hbadge">
+          <img src="https://img.icons8.com/fluency/96/briefcase.png" alt="Briefcase Icon">
+          <h4 data-i18n="badge-2-h">仕事に直結</h4>
+          <p data-i18n="badge-2-p">明日から使える力</p>
+        </div>
+        <div class="hbadge">
+          <img src="https://img.icons8.com/fluency/96/shield.png" alt="Shield Icon">
+          <h4 data-i18n="badge-3-h">安全・リスク管理</h4>
+          <p data-i18n="badge-3-p">正しい活用知識</p>
+        </div>
+        <div class="hbadge">
+          <img src="https://img.icons8.com/fluency/96/conference-call.png" alt="Conference Icon">
+          <h4 data-i18n="badge-4-h">対面少人数制</h4>
+          <p data-i18n="badge-4-p">高い学習効果</p>
+        </div>
+      </div>
+      <div class="hero-ctas">
+        <button class="btn btn-yellow arrow-r" onclick="window.open('https://ercll.u-ryukyu.narayun.jp', '_blank')"
+          data-i18n="hero-cta-primary">今すぐ申し込む</button>
+        <button class="btn btn-outline arrow-r" onclick="smoothScroll('#courses')"
+          data-i18n="hero-cta-secondary">講座の内容を見る</button>
+      </div>
+    </div>
+
+    <div class="hero-collage">
+      <div class="dots-tl"></div>
+      <div class="sq-tr"></div>
+      <!-- Main Campus Photo Integration -->
+      <div class="photo-main">
+        <img src="琉大様子１.png" alt="University of the Ryukyus Beautiful Campus">
+      </div>
+      <div class="dots-br"></div>
+      <div class="photo-shurijo">
+        <img src="琉大様子3.png"
+          alt="Beautiful Okinawa Sea and sky">
+      </div>
+      <div class="sq-yellow"></div>
+      <!-- Classroom Live Photo Integration -->
+      <div class="photo-class">
+        <img src="琉大様子２.png" alt="University Ryukyu Active Lecture Hall">
+      </div>
+    </div>
+  </section>
+
+  <section class="why-ai" id="why">
+    <div style="text-align: center; max-width: 1200px; margin: 0 auto;">
+      <div class="hero-eyebrow" style="color: var(--yellow); margin-bottom: 8px; display: inline-block;"
+        data-i18n="why-eyebrow">Why AI Now?</div>
+      <h2 style="color: #fff; margin: 0 0 16px; font-size: 32px; font-weight: 800;" data-i18n="why-title">
+        なぜ今、すべての社会人にAIが必要なのか</h2>
+    </div>
+    <div class="why-content">
+      <div class="data-visual">
+        <div
+          style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+          <div class="graph-label" style="margin-bottom: 0;" data-i18n="sim-label">AI導入効果予測シミュレーター (2026-2030)</div>
+          <div class="sim-toggle-container">
+            <button class="sim-toggle-btn active" id="btnNoAi" onclick="toggleSim(false)"
+              data-i18n="sim-no-ai">現状維持</button>
+            <button class="sim-toggle-btn" id="btnWithAi" onclick="toggleSim(true)" data-i18n="sim-with-ai">AI導入後
+              ✨</button>
+          </div>
+        </div>
+        <div class="sim-metrics">
+          <div class="metric-card">
+            <div class="title" data-i18n="metric-overtime-label">平均残業時間（月）</div>
+            <div class="value" id="valOvertime">45 <span class="unit" data-i18n="unit-hours">時間</span></div>
+          </div>
+          <div class="metric-card highlight">
+            <div class="title" data-i18n="metric-speed-label">平均業務処理能力</div>
+            <div class="value" id="valSpeed">1.0 <span class="unit" data-i18n="unit-times">倍</span></div>
+          </div>
+        </div>
+        <div class="chart-wrapper">
+          <div class="y-axis-labels">
+            <span data-i18n="chart-y-max">高効率</span>
+            <span data-i18n="chart-y-avg">平均</span>
+            <span data-i18n="chart-y-low">低効率</span>
+          </div>
+          <div class="chart-content">
+            <div class="grid-line" style="bottom: 0%;"></div>
+            <div class="grid-line" style="bottom: 50%;"></div>
+            <div class="grid-line" style="bottom: 100%;"></div>
+            <svg class="chart-svg-overlay" id="chartSvg">
+              <path id="trendLine" d="" fill="none" stroke="#ff4d4d" stroke-width="3.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            <div class="chart-cols">
+              <div class="chart-col" onmouseover="showTooltip(0)" onmouseout="hideTooltip()">
+                <div class="bar-container">
+                  <div class="bar bar-bg"></div>
+                  <div class="bar bar-active" id="bar0"></div>
+                </div>
+                <div class="line-dot" id="dot0"></div>
+                <div class="year-label">2026</div>
+              </div>
+              <div class="chart-col" onmouseover="showTooltip(1)" onmouseout="hideTooltip()">
+                <div class="bar-container">
+                  <div class="bar bar-bg"></div>
+                  <div class="bar bar-active" id="bar1"></div>
+                </div>
+                <div class="line-dot" id="dot1"></div>
+                <div class="year-label">2027</div>
+              </div>
+              <div class="chart-col" onmouseover="showTooltip(2)" onmouseout="hideTooltip()">
+                <div class="bar-container">
+                  <div class="bar bar-bg"></div>
+                  <div class="bar bar-active" id="bar2"></div>
+                </div>
+                <div class="line-dot" id="dot2"></div>
+                <div class="year-label">2028</div>
+              </div>
+              <div class="chart-col" onmouseover="showTooltip(3)" onmouseout="hideTooltip()">
+                <div class="bar-container">
+                  <div class="bar bar-bg"></div>
+                  <div class="bar bar-active" id="bar3"></div>
+                </div>
+                <div class="line-dot" id="dot3"></div>
+                <div class="year-label">2029</div>
+              </div>
+              <div class="chart-col" onmouseover="showTooltip(4)" onmouseout="hideTooltip()">
+                <div class="bar-container">
+                  <div class="bar bar-bg"></div>
+                  <div class="bar bar-active" id="bar4"></div>
+                </div>
+                <div class="line-dot" id="dot4"></div>
+                <div class="year-label">2030</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <span class="legend-item"><span class="legend-color" style="background: var(--yellow);"></span><span
+              data-i18n="legend-productivity">生産性（処理能力）</span></span>
+          <span class="legend-item"><span class="legend-color"
+              style="background: #ff4d4d; border-radius: 50%;"></span><span
+              data-i18n="legend-overtime">平均残業時間</span></span>
+        </div>
+        <div class="chart-source" style="font-size: 11px; color: rgba(255, 255, 255, 0.6); text-align: right; margin-top: 12px;" data-i18n="chart-source">
+          ※出典：各種公的統計およびAI導入効果に関する研究レポートを基に算出（推計値）
+        </div>
+        <div id="chartTooltip" class="chart-tooltip"></div>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <h3 data-i18n="why-item-1-title">01. 労働人口減少への唯一にして最大の対抗策</h3>
+          <p data-i18n="why-item-1-desc">
+            激化する人手不足を前に、採用コストの上昇は止まりません。新人を雇用するのではなく、既存の各チームメンバーが「デジタルAI副操縦士」を味方につけることが、安定経営と組織の持続可能性を確固たるものにします。</p>
+        </div>
+        <div class="why-item">
+          <h3 data-i18n="why-item-2-title">02. 創出される圧倒的な知的生産力</h3>
+          <p data-i18n="why-item-2-desc">実務レベルでAIを使いこなせる人は、非活用者と比較して数倍～十数倍 of
+            のスピードで高度なアウトプットを引き出します。この能力格差はもはや残業時間やマンパワーでカバーできる範疇を超えています。</p>
+        </div>
+        <div class="why-item">
+          <h3 data-i18n="why-item-3-title">03. 組織と個人の市場価値を限界突破させる</h3>
+          <p data-i18n="why-item-3-desc">
+            定型事務や時間のかかる下調べ、構成検討をAIに役割分担し、人間はより戦略的で高次元な「意思決定」や「地域課題解決」に特化する。この役割分担の最適化こそが、最大の価値を生み出します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coordinator/Producer Introduction -->
+  <section class="instructor">
+    <div class="instructor-wrap">
+      <div class="instructor-photo-box">
+        <!-- Set Class Lecture Hall Photo as Yosuke Omori's profile photo -->
+        <img class="instructor-photo" src="Gemini_Generated_Image_tc59bstc59bstc59.png" alt="大森洋介 准教授">
+        <div class="instructor-title" data-i18n="producer-badge">琉球大学公開講座 プロデューサー</div>
+        <h2 class="instructor-name"><span data-i18n="producer-name">大森 洋介</span> <span
+            style="font-size:16px; font-weight:500; color:var(--ink-2);" data-i18n="producer-title">特命准教授</span></h2>
+      </div>
+      <div class="instructor-message">
+        <h3 data-i18n="producer-heading">「最先端を、誰もが直感的に動かせる感動」をすべての方へ。</h3>
+        <p class="instructor-text" data-i18n="producer-text">
+          情報技術の進歩は極めて早く、「置いていかれるのではないか」という漠然とした不安を抱える方は少なくありません。しかし実のところ、現代のITは専門技術ではなく、私たちの「言葉」や「想像力」で動かせる直感的な道具へと進化しています。つまり、最も強力な変革ツールが、今や誰でも使える状態で目の前に整っています。<br><br>
+          本講座では、体系的な視点をベースに、明日からの実務や地域課題にすぐ実装できる実践ワークを多数用意しました。対面だからこそ、人との繋がりを大切にしながら、つまずかずに「遊び」として体験できる最適なカリキュラムです。ぜひ一緒に体験しましょう。
+        </p>
+        <p class="instructor-bio" data-i18n="producer-bio">
+          <strong>【略略／Profile】</strong><br>
+          琉球大学研究共創機構
+          特命准教授。地域連携機構等においてデジタル変革（DX）、ビジネスAI、デジタルリテラシー、IT教育を専門とし、沖縄県内外のSTEM教育活動や企業への実務AI・デジタルマーケティング教育の支援、および科学教育推進プロジェクトを多数兼任する。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div style="text-align: center; margin: 40px 0;">
+    <button class="btn btn-yellow arrow-r" onclick="window.open('https://ercll.u-ryukyu.narayun.jp', '_blank')" data-i18n="cta-btn">今すぐ申し込む</button>
+  </div>
+
+  <!-- Courses Schedule Table (Full-Width) -->
+  <section class="courses" id="courses">
+    <div class="courses-h">
+      <h2 data-i18n="courses-title">講座の内容</h2>
+      <span class="sub" data-i18n="courses-sub">（全10講座・各回独立構成）</span>
+    </div>
+
+    <div class="course-table-wrap">
+      <table class="course-table">
+        <tbody id="courseTable">
+          <!-- Populated via JavaScript -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Skills Section (Separated visually into a full-width row below the table) -->
+    <div class="skills-card-wide">
+      <h3 data-i18n="skills-title">この講座で身につくこと</h3>
+      <div class="skills-grid">
+        <div class="skills-item">
+          <div class="skills-text-box">
+            <h4 data-i18n="skill-1-h">AIプロンプト設計力（対話と壁打ち）</h4>
+            <p data-i18n="skill-1-p">ChatGPTやClaudeをはじめ、AIとの最適な「言語対話」により高精度な解答を導くプロンプト技法が身につきます。</p>
+          </div>
+        </div>
+        <div class="skills-item">
+          <div class="skills-text-box">
+            <h4 data-i18n="skill-2-h">実務文書＆議事録のスピード生成</h4>
+            <p data-i18n="skill-2-p">長文資料からの重要な情報の抽出、構造化された会議要約、取引先向けビジネス文書の構築をほぼ一瞬で完了できます。</p>
+          </div>
+        </div>
+        <div class="skills-item">
+          <div class="skills-text-box">
+            <h4 data-i18n="skill-3-h">データ分析とグラフ視覚化の自動化</h4>
+            <p data-i18n="skill-3-p">Excel作業の効率化はもちろん、膨大な数値データをAIに読み込ませ、傾向分析や最適な分析グラフを指示・自動作成する手法を体得。</p>
+          </div>
+        </div>
+        <div class="skills-item">
+          <div class="skills-text-box">
+            <h4 data-i18n="skill-4-h">セキュリティ・ハルシネーション対策</h4>
+            <p data-i18n="skill-4-p">ビジネスで使用する際のデータプライバシー設定、嘘の情報（ハルシネーション）を見破る安全ガイドラインを習得します。</p>
+          </div>
+        </div>
+      </div>
+      <p class="skills-note" data-i18n="skills-note-text">※各回はそれぞれ完結した実戦形式です。ご自身の興味や強化したい領域に合わせて1回だけの単発受講も大歓迎です。</p>
+    </div>
+  </section>
+
+  <section class="strengths" id="strengths">
+    <h2 data-i18n="strengths-title">琉球大学公開講座ならではの強み</h2>
+    <div class="str-grid">
+      <div class="str-col">
+        <img src="https://img.icons8.com/fluency/48/star.png" alt="Star">
+        <h4 data-i18n="strength-1-h">実務密着型カリキュラム</h4>
+        <p data-i18n="strength-1-p">難しい理論は後回し。明日からの仕事をラクにする具体例とワークを徹底追求。</p>
+      </div>
+      <div class="str-col">
+        <img src="https://img.icons8.com/fluency/48/manager.png" alt="Facilitator">
+        <h4 data-i18n="strength-2-h">手厚い少人数・対面講義</h4>
+        <p data-i18n="strength-2-p">講師とプロットを共有する対面講義。わからない点をその場ですぐに直接解決。</p>
+      </div>
+      <div class="str-col">
+        <img src="https://img.icons8.com/fluency/48/up.png" alt="Up">
+        <h4 data-i18n="strength-3-h">段階的な体系的ステップ</h4>
+        <p data-i18n="strength-3-p">初心者から安全かつ確実に高度な活用領域へとステップアップできる親切構成。</p>
+      </div>
+      <div class="str-col">
+        <img src="https://img.icons8.com/fluency/48/help.png" alt="Support">
+        <h4 data-i18n="strength-4-h">信頼の大学公開講座</h4>
+        <p data-i18n="strength-4-p">琉球大学の信頼ある研究・地域推進活動として、中立、安全、高度な学習を担保。</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <button class="btn btn-yellow arrow-r" onclick="window.open('https://ercll.u-ryukyu.narayun.jp', '_blank')" data-i18n="cta-btn">今すぐ申し込む</button>
+    </div>
+  </section>
+
+  <section class="testimonials-preview">
+    <div class="testimonials-inner">
+      <h2 data-i18n="testi-title">企画した学生の声</h2>
+      <div class="testimonials-sub" data-i18n="testi-sub">本講座をプロデュースした琉球大学の学生チームからのメッセージです</div>
+      <div class="testimonials-grid">
+        <div class="review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text" data-i18n="review-1-text">
+              「社会人の皆様が現場で直面する課題を、どうすればAIで解決できるかを学生チームで徹底的に議論しました。皆さんの業務が少しでも楽になるよう、実践的な内容にこだわっています！」</p>
+          </div>
+          <div class="review-user">
+            <img class="review-avatar" src="大森先生仮.png" alt="企画した学生">
+            <div class="review-info">
+              <div class="name" data-i18n="review-1-name">琉球大学 学生チーム</div>
+              <div class="meta" data-i18n="review-1-meta">企画・運営リーダー / 3年</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text" data-i18n="review-2-text">
+              「私たちが普段から活用しているAIの便利さを、社会人の方にも届けたいという思いからスタートしました。AIに不慣れな方でも安心して参加できるよう、私たちが全力でサポートします！」</p>
+          </div>
+          <div class="review-user">
+            <img class="review-avatar" src="大森先生仮.png" alt="企画した学生">
+            <div class="review-info">
+              <div class="name" data-i18n="review-2-name">琉球大学 学生チーム</div>
+              <div class="meta" data-i18n="review-2-meta">サポート統括 / 4年</div>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text" data-i18n="review-3-text">
+              「私も、AIビギナーだったのですが、AIの使い方を学んで日常が充実しています。最近はアプリを開発するなど、より発展的な段階に楽しんで取り組めています！」</p>
+          </div>
+          <div class="review-user">
+            <div style="width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
+              <img src="Gemini_Generated_Image_nabxgknabxgknabx.png" alt="企画した学生" style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.7); transform-origin: center 20%;">
+            </div>
+            <div class="review-info">
+              <div class="name" data-i18n="review-3-name">琉球大学 学生チーム</div>
+              <div class="meta" data-i18n="review-3-meta">国際地域創造学部 / 1年</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <!-- Fixed non-navigating link to pop up an interactive modal -->
+        <button class="btn btn-outline" onclick="openTestimonialModal()"
+          data-i18n="testi-more-btn">すべての参加者・企画者の声をもっと詳しく見る ↗</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Integrated About & Pricing Section -->
+  <section class="pricing" id="pricing">
+    <h2 class="pricing-h" data-i18n="pricing-h-text">料金・受講システム</h2>
+
+    <div class="price-card">
+      <!-- About & Price Integrated Meta Data -->
+      <div class="price-grid">
+        <div class="price-meta-item">
+          <div class="p-label" data-i18n="meta-label-format">開催形式</div>
+          <div class="p-value" data-i18n="meta-val-format">対面講義のみ（実戦ワーク付）</div>
+        </div>
+        <div class="price-meta-item">
+          <div class="p-label" data-i18n="meta-label-time">1回の講義時間</div>
+          <div class="p-value" data-i18n="meta-val-time">1回 60分</div>
+        </div>
+        <div class="price-meta-item">
+          <div class="p-label" data-i18n="meta-label-target">対象</div>
+          <div class="p-value" data-i18n="meta-val-target">ビジネスパーソン・経営者・一般の方</div>
+        </div>
+        <div class="price-meta-item">
+          <div class="p-label" data-i18n="meta-label-limit">定員</div>
+          <div class="p-value" data-i18n="meta-val-limit">各回 少人数限定（先着順）</div>
+        </div>
+      </div>
+
+      <!-- Dynamic Detailed Price Display -->
+      <div class="price-amount-box">
+        <div class="tags">
+          <span data-i18n="price-tag-1">各回60分</span>
+          <span data-i18n="price-tag-2">実機ワークあり</span>
+        </div>
+        <span class="fee-title" data-i18n="fee-title-label">1回あたり特別受講料</span>
+        <div class="fee-value">3,600<span class="yen">円</span><span class="tax">（税込）</span></div>
+        <p class="payment-info" data-i18n="payment-info-text">※お支払いは当日または事前オンライン決済となります。</p>
+      </div>
+
+      <ul class="price-bullets">
+        <li data-i18n="bullet-p-1">ご自身のPCをご持参いただく実践ワークアウト形式です。</li>
+        <li data-i18n="bullet-p-2">1回単位での申込が可能。ご都合の良い日時を選んでピンポイント受講OK。</li>
+        <li data-i18n="bullet-p-3">法人複数名での参加や全講座の一括申込については別途ご相談ください。</li>
+      </ul>
+    </div>
+
+    <div class="venue-card">
+      <!-- Real Google Map integration for Ryukyu University -->
+      <div class="venue-map-area">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.431284561066!2d127.7634351!3d26.247656600000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56cee700efcd3%3A0x6b8eb67586be7781!2z55CJ55CD5aSn5a2m!5e0!3m2!1sja!2sjp!4v1716500000000!5m2!1sja!2sjp"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="venue-info-box">
+        <div>
+          <div class="v-label" data-i18n="venue-tag">会場・アクセス</div>
+          <h4>琉球大学 千原キャンパス</h4>
+          <p style="margin-bottom: 12px; font-weight: 700;">〒903-0213 沖縄県中頭郡西原町字千原1番地</p>
+          <p data-i18n="venue-desc">※学内教室の詳細は、お申し込み後に送付される受講票案内メールにて詳細地図と共にご案内します。</p>
+        </div>
+        <a class="access-btn" href="https://www.u-ryukyu.ac.jp/access/" target="_blank"
+          data-i18n="venue-link-text">公式アクセスガイドを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="wrap" id="contact">
+    <div class="apply-section">
+      <h3 data-i18n="apply-title">お問い合わせ</h3>
+      <p data-i18n="apply-desc">
+        講座に関するご質問等がありましたら、こちらの専用メールアドレスにて承っております。<br>
+        メールアドレスをクリック（またはタップ）していただくと、メールソフトが自動的に起動します。
+      </p>
+      <a href="mailto:ryukyukaisei@gmail.com?subject=琉球大学公開講座についてのお問い合わせ&body=【お名前】%0D%0A【ご連絡先】%0D%0A【お問い合わせ内容】%0D%0A%0D%0A（上記をご記入の上送信してください。）"
+        class="email-link">
+        <img src="https://img.icons8.com/fluent-systems-filled/96/new-post.png" alt="Mail Icon">
+        ryukyukaisei@gmail.com
+      </a>
+      <p class="email-note" data-i18n="apply-note">※お急ぎの場合は件名に「急ぎ」とご記入ください。折り返しご案内差し上げます。</p>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <h2 data-i18n="faq-title">よくある質問</h2>
+    <div class="faq-list" id="faqList"></div>
+  </section>
+
+  <section class="cta-band">
+    <div class="left">
+      <h2 data-i18n="cta-band-title">まずは1講座から、<br>AI活用への第一歩を踏み出そう。</h2>
+      <div><button class="btn btn-yellow arrow-r" onclick="window.open('https://ercll.u-ryukyu.narayun.jp', '_blank')"
+          data-i18n="cta-band-btn">今すぐ申し込む</button></div>
+    </div>
+    <div class="right">
+      <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=500&q=80"
+        alt="Consultation">
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="brand">
+      <img src="03.png" alt="University of the Ryukyus Official Logo">
+    </div>
+    <nav class="footer-nav">
+      <a href="#why" data-i18n="nav-why">なぜ今AIか</a>
+      <a href="#courses" data-i18n="nav-courses">講座の内容</a>
+      <a href="#strengths" data-i18n="nav-strengths">強み</a>
+      <a href="#pricing" data-i18n="nav-pricing">料金・アクセス</a>
+      <a href="#faq" data-i18n="nav-faq">FAQ</a>
+    </nav>
+    <div class="footer-copy">© University of the Ryukyus | Regional Collaboration Institute</div>
+  </footer>
+
+  <!-- Interactive Participant & Coordinator Testimonial Modal -->
+  <div class="modal-overlay" id="testimonialModal">
+    <div class="modal-window">
+      <button class="modal-close" onclick="closeTestimonialModal()">×</button>
+      <div class="modal-title" data-i18n="modal-title-text">すべての参加者・企画者の詳細な生の声</div>
+      <div class="modal-content-area" id="modalReviews">
+        <!-- Dynamic Modal Reviews Populated based on Language -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Multi-language translation database
+    const translations = {
+      ja: {
+        "header-brand-univ": "琉球大学",
+        "nav-why": "なぜ今AIか",
+        "nav-courses": "講座の内容",
+        "nav-strengths": "強み",
+        "nav-voice": "参加者の声",
+        "nav-pricing": "料金・アクセス",
+        "nav-faq": "FAQ",
+        "cta-btn": "今すぐ申し込む",
+        "hero-eyebrow": "ビジネスパーソン・経営者のための",
+        "hero-title-1": "仕事が終わらないのは、",
+        "hero-title-2": "AIを知らないから。",
+        "hero-subtitle": "琉球大学 公開講座",
+        "hero-lead-text": "「人手が足りない」と嘆く前に、AIという信頼できる副操縦士を。全10回の厳選されたステップで、あなたの実務を「AIネイティブ」へ即日アップデートします。",
+        "badge-1-h": "初心者歓迎",
+        "badge-1-p": "基礎から丁寧に",
+        "badge-2-h": "仕事に直結",
+        "badge-2-p": "明日から使える力",
+        "badge-3-h": "リスク管理",
+        "badge-3-p": "正しい活用知識",
+        "badge-4-h": "対面少人数制",
+        "badge-4-p": "高い学習効果",
+        "hero-cta-primary": "今すぐ申し込む",
+        "hero-cta-secondary": "講座の内容を見る",
+        "collage-tag": "AI活用で<br>生産性革命",
+        "why-eyebrow": "Why AI Now?",
+        "why-title": "なぜ今、すべての社会人にAIが必要なのか",
+        "sim-label": "AI導入効果予測シミュレーター (2026-2030)",
+        "chart-source": "※出典：各種公的統計およびAI導入効果に関する研究レポートを基に算出（推計値）",
+        "sim-no-ai": "現状維持",
+        "sim-with-ai": "AI導入後 ✨",
+        "metric-overtime-label": "平均残業時間（月）",
+        "metric-speed-label": "平均業務処理能力",
+        "unit-hours": "時間",
+        "unit-times": "倍",
+        "chart-y-max": "高効率",
+        "chart-y-avg": "平均",
+        "chart-y-low": "低効率",
+        "legend-productivity": "生産性（処理能力）",
+        "legend-overtime": "平均残業時間",
+        "why-item-1-title": "01. 労働人口減少への唯一にして最大の対抗策",
+        "why-item-1-desc": "激化する人手不足を前に、採用コストの上昇は止まりません。新人を雇用するのではなく、既存の各チームメンバーが「デジタルAI副操縦士」を味方につけることが、安定経営と組織の持続可能性を確固たるものにします。",
+        "why-item-2-title": "02. 創出される圧倒的な知的生産力",
+        "why-item-2-desc": "実務レベルでAIを使いこなせる人は、非活用者と比較して数倍～十数倍のスピードで高度なアウトプットを引き出します。この能力格差はもはや残業時間やマンパワーでカバーできる範疇を超えています。",
+        "why-item-3-title": "03. 組織と個人の市場価値を限界突破させる",
+        "why-item-3-desc": "定型事務や時間のかかる下調べ、構成検討をAIに役割分担し、人間はより戦略的で高次元な「意思決定」や「地域課題解決」に特化する。この役割分担の最適化こそが、最大の価値を生み出します。",
+        "producer-badge": "琉球大学公開講座 プロデューサー",
+        "producer-name": "大森 洋介",
+        "producer-title": "特命准教授",
+        "producer-heading": "「最先端を、誰もが直感的に動かせる感動」をすべての方へ。",
+        "producer-text": "情報技術の進歩は極めて早く、「置いていかれるのではないか」という漠然とした不安を抱える方は少なくありません。しかし実のところ、現代のITは専門技術ではなく、私たちの「言葉」や「想像力」で動かせる直感的な道具へと進化しています。つまり、最も強力な変革ツールが、今や誰でも使える状態で目の前に整っています。<br><br>本講座では、体系的な視点をベースに、明日からの実務や地域課題にすぐ実装できる実践ワークを多数用意しました。対面だからこそ、人との繋がりを大切にしながら、つまずかずに「遊び」として体験できる最適なカリキュラムです。ぜひ一緒に体験しましょう。",
+        "producer-bio": "<strong>【略歴／Profile】</strong><br>琉球大学研究共創機構 特命准教授。地域連携機構等においてデジタル変革（DX）、ビジネスAI、デジタルリテラシー、IT教育を専門とし、沖縄県内外のSTEM教育活動や企業への実務AI・デジタルマーケティング教育の支援、および科学教育推進プロジェクトを多数兼任する。",
+        "courses-title": "講座の内容",
+        "courses-sub": "（全10講座・各回独立構成）",
+        "skills-title": "この講座で身につくこと",
+        "skill-1-h": "AIプロンプト設計力（対話と壁打ち）",
+        "skill-1-p": "ChatGPTやClaudeをはじめ、AIとの最適な「言語対話」により高精度な解答を導くプロンプト技法が身につきます。",
+        "skill-2-h": "実務文書＆議事録のスピード生成",
+        "skill-2-p": "長文資料からの重要な情報の抽出、構造化された会議要約、取引先向けビジネス文書の構築をほぼ一瞬で完了できます。",
+        "skill-3-h": "データ分析とグラフ視覚化の自動化",
+        "skill-3-p": "Excel作業の効率化はもちろん、膨大な数値データをAIに読み込ませ、傾向分析や最適な分析グラフを指示・自動作成する手法を体得。",
+        "skill-4-h": "セキュリティ・ハルシネーション対策",
+        "skill-4-p": "ビジネスで使用する際のデータプライバシー設定、嘘の情報（ハルシネーション）を見破る安全ガイドラインを習得します。",
+        "skills-note-text": "※各回はそれぞれ完結した実戦形式です。ご自身の興味や強化したい領域に合わせて1回だけの単発受講も大歓迎です。",
+        "strengths-title": "琉球大学公開講座ならではの強み",
+        "strength-1-h": "実務密着型カリキュラム",
+        "strength-1-p": "難しい理論は後回し。明日からの仕事をラクにする具体例とワークを徹底追求。",
+        "strength-2-h": "手厚い少人数・対面講義",
+        "strength-2-p": "講師とプロットを共有する対面講義。わからない点をその場ですぐに直接解決。",
+        "strength-3-h": "段階的な体系的ステップ",
+        "strength-3-p": "初心者から安全かつ確実に高度な活用領域へとステップアップできる親切構成。",
+        "strength-4-h": "信頼の大学公開講座",
+        "strength-4-p": "琉球大学の信頼ある研究・地域推進活動として、中立、安全、高度な学習を担保。",
+        "testi-title": "企画した学生の声",
+        "testi-sub": "本講座をプロデュースした琉球大学の学生チームからのメッセージです",
+        "review-1-text": "「社会人の皆様が現場で直面する課題を、どうすればAIで解決できるかを学生チームで徹底的に議論しました。皆さんの業務が少しでも楽になるよう、実践的な内容にこだわっています！」",
+        "review-1-name": "琉球大学 学生チーム",
+        "review-1-meta": "企画・運営リーダー / 3年",
+        "review-2-text": "「私たちが普段から活用しているAIの便利さを、社会人の方にも届けたいという思いからスタートしました。AIに不慣れな方でも安心して参加できるよう、私たちが全力でサポートします！」",
+        "review-2-name": "琉球大学 学生チーム",
+        "review-2-meta": "サポート統括 / 4年",
+        "review-3-text": "「私も、AIビギナーだったのですが、AIの使い方を学んで日常が充実しています。最近はアプリを開発するなど、より発展的な段階に楽しんで取り組めています！」",
+        "review-3-name": "琉球大学 学生チーム",
+        "review-3-meta": "国際地域創造学部 / 1年",
+        "testi-more-btn": "すべての参加者・企画者の声をもっと詳しく見る ↗",
+        "pricing-h-text": "料金・受講システム",
+        "meta-label-format": "開催形式",
+        "meta-val-format": "対面講義のみ（実戦ワーク付）",
+        "meta-label-time": "1回の講義時間",
+        "meta-val-time": "1回 60分",
+        "meta-label-target": "対象",
+        "meta-val-target": "ビジネスパーソン・経営者・一般の方",
+        "meta-label-limit": "定員",
+        "meta-val-limit": "各回 少人数限定（先着順）",
+        "fee-title-label": "1回あたり特別受講料",
+        "payment-info-text": "※お支払いは当日または事前オンライン決済となります。",
+        "bullet-p-1": "ご自身のPCをご持参いただく実践ワークアウト形式です。",
+        "bullet-p-2": "1回単位での申込が可能。ご都合の良い日時を選んでピンポイント受講OK。",
+        "bullet-p-3": "法人複数名での参加や全講座の一括申込については別途ご相談ください。",
+        "venue-tag": "会場・アクセス",
+        "venue-desc": "※学内教室の詳細は、お申し込み後に送付される受講票案内メールにて詳細地図と共にご案内します。",
+        "venue-link-text": "公式アクセスガイドを見る",
+        "faq-title": "よくある質問",
+        "apply-title": "お問い合わせ",
+        "apply-desc": "講座に関するご質問等がありましたら、こちらの専用メールアドレスにて承っております。<br>メールアドレスをクリック（またはタップ）していただくと、メールソフトが自動的に起動します。",
+        "apply-note": "※お急ぎの場合は件名に「急ぎ」とご記入ください。折り返しご案内差し上げます。",
+        "cta-band-title": "まずは1講座から、<br>AI活用への第一歩を踏み出そう。",
+        "cta-band-btn": "今すぐ申し込む",
+        "modal-title-text": "すべての参加者・企画者の詳細な生の声",
+        "price-tag-1": "各回60分",
+        "price-tag-2": "実機ワークあり"
+      },
+      en: {
+        "header-brand-univ": "Ryukyu University",
+        "nav-why": "Why AI",
+        "nav-courses": "Curriculum",
+        "nav-strengths": "Strengths",
+        "nav-voice": "Testimonials",
+        "nav-pricing": "Format & Access",
+        "nav-faq": "FAQ",
+        "cta-btn": "Apply Now",
+        "hero-eyebrow": "For Professionals & Executives",
+        "hero-title-1": "Lagging behind in work?",
+        "hero-title-2": "It's because you don't know AI.",
+        "hero-subtitle": "Ryukyu University Public Course",
+        "hero-lead-text": "Before giving up on labor shortages, welcome AI as your trusty co-pilot. Instantly upgrade your operations to AI-Native with our structured 10-session curriculum.",
+        "badge-1-h": "Beginner Friendly",
+        "badge-1-p": "Step-by-step guidance",
+        "badge-2-h": "Business Oriented",
+        "badge-2-p": "Applicable tomorrow",
+        "badge-3-h": "Risk Management",
+        "badge-3-p": "Safe & Secure practices",
+        "badge-4-h": "Small In-Person Classes",
+        "badge-4-p": "High learning efficiency",
+        "hero-cta-primary": "Enroll Now",
+        "hero-cta-secondary": "View Curriculum",
+        "collage-tag": "Unleash AI<br>Productivity",
+        "why-eyebrow": "Why AI Now?",
+        "why-title": "Why Every Professional Needs AI Literacy Today",
+        "sim-label": "AI Impact Forecast Simulator (2026-2030)",
+        "sim-no-ai": "Status Quo",
+        "sim-with-ai": "With AI ✨",
+        "metric-overtime-label": "Monthly Overtime",
+        "metric-speed-label": "Work Processing Capacity",
+        "unit-hours": "Hours",
+        "unit-times": "x Boost",
+        "chart-y-max": "High",
+        "chart-y-avg": "Avg",
+        "chart-y-low": "Low",
+        "legend-productivity": "Productivity (Capacity)",
+        "legend-overtime": "Average Overtime Hours",
+        "why-item-1-title": "01. The Best Solution for Labor Shortages",
+        "why-item-1-desc": "With shrinking working populations, hiring costs continue to soar. Instead of endless recruitment cycles, equip current staff with 'digital AI assistants' to secure operational stability and institutional longevity.",
+        "why-item-2-title": "02. Phenomenal Intelligence Output",
+        "why-item-2-desc": "Professionals adept with generative AI work at a vastly higher level, drafting proposals, summarizing documents, and organizing tasks 5x to 10x faster. This gap can no longer be bridged by manual labor alone.",
+        "why-item-3-title": "03. Maximize Organization & Individual Value",
+        "why-item-3-desc": "Delegate repetitive tasks, drafting, and data parsing to the AI, freeing up humans to focus on strategy, regional co-creation, and decisive problem-solving. This optimization creates premium value.",
+        "producer-badge": "Public Lecture Program Producer",
+        "producer-name": "Yosuke Omori",
+        "producer-title": "Special Associate Professor",
+        "producer-heading": "Bringing the excitement of intuitive, next-generation AI tools to everyone.",
+        "producer-text": "The progress of information technology is extremely fast, and it's common to feel a vague anxiety about 'being left behind.' However, modern IT has evolved from a specialized skill into an intuitive tool driven by our 'words' and 'imagination.' The most powerful transformational tools are now ready and accessible to everyone.<br><br>In this course, based on a systematic perspective, we have prepared numerous practical workflows that can be immediately implemented in your daily tasks and regional challenges. Because it is face-to-face, it's the perfect curriculum to value human connection and experience learning as 'play' without getting stuck. Let's experience it together.",
+        "producer-bio": "<strong>【Biography／Profile】</strong><br>Special Associate Professor at the Research Co-Creation Organization, Ryukyu University. Specializes in Digital Transformation (DX), Business AI implementation, digital literacy, and STEM education, actively supporting regional businesses and regional tech development initiatives.",
+        "courses-title": "Course Curriculum",
+        "courses-sub": "(10 Independent Classes)",
+        "skills-title": "Skills You Will Master",
+        "skill-1-h": "AI Prompt Engineering",
+        "skill-1-p": "Learn effective structured prompt techniques to draw precise, rich responses from tools like ChatGPT and Claude.",
+        "skill-2-h": "Rapid Document Writing & Summarization",
+        "skill-2-p": "Summarize massive files, automatically construct clear meeting minutes, and draft professional emails in seconds.",
+        "skill-3-h": "Data Analysis & Graphical Automation",
+        "skill-3-p": "Feed raw data into AI to generate analytical insights, identify trends, and create dynamic graphs without complex Excel coding.",
+        "skill-4-h": "Security & Hallucination Mitigation",
+        "skill-4-p": "Understand essential data privacy protocols, prevent leaks, and master validation to identify incorrect AI assertions.",
+        "skills-note-text": "* Each class is completely independent. Feel free to choose and attend only the single sessions that align with your requirements.",
+        "strengths-title": "Why Choose Ryukyu University Public Lectures?",
+        "strength-1-h": "Practical Workflows",
+        "strength-1-p": "We skip dry theories to focus entirely on actionable real-world examples and interactive exercises.",
+        "strength-2-h": "Small Group Support",
+        "strength-2-p": "With in-person coaching, you receive instant guidance on your own PC whenever you get stuck.",
+        "strength-3-h": "Well-Structured Steps",
+        "strength-3-p": "A meticulously planned path designed to lead absolute beginners toward highly advanced use cases.",
+        "strength-4-h": "Credible Public Institution",
+        "strength-4-p": "Ensures academic integrity, strict security protocols, and unbiased, reliable training methodologies.",
+        "testi-title": "Voices from the Student Planners",
+        "testi-sub": "Messages from the University of the Ryukyus student team who produced this course.",
+        "review-1-text": "『We thoroughly discussed how AI can solve the actual challenges working professionals face. We focused on practical content so your daily tasks become easier!』",
+        "review-1-name": "Ryukyu Univ. Student Team",
+        "review-1-meta": "Planning Leader / Junior",
+        "review-2-text": "『We started this initiative because we wanted to share the convenience of AI that we use daily with professionals. We will do our best to support everyone, even those unfamiliar with AI!』",
+        "review-2-name": "Ryukyu Univ. Student Team",
+        "review-2-meta": "Support Manager / Senior",
+        "review-3-text": "『I was also an AI beginner, but learning how to use AI has enriched my daily life. Recently, I've even been developing apps and enjoying taking on more advanced stages!』",
+        "review-3-name": "Ryukyu Univ. Student Team",
+        "review-3-meta": "Faculty of Global and Regional Studies / Freshman",
+        "testi-more-btn": "See All Coordinator & Participant Voices ↗",
+        "pricing-h-text": "Fees & Course Format",
+        "meta-label-format": "Format",
+        "meta-val-format": "In-Person Lecture & Practice",
+        "meta-label-time": "Duration",
+        "meta-val-time": "60 Minutes per Session",
+        "meta-label-target": "Target",
+        "meta-val-target": "Business Professionals, Executives & Locals",
+        "meta-label-limit": "Capacity",
+        "meta-val-limit": "Limited seats per session (First-come basis)",
+        "fee-title-label": "Special Enrollment Fee per Session",
+        "payment-info-text": "* Payments can be made via convenient on-site or pre-registration online payment.",
+        "bullet-p-1": "Practical workout format. Please bring your own notebook PC.",
+        "bullet-p-2": "Fully flexible single-session enrollment. Register only for your chosen days.",
+        "bullet-p-3": "For group registrations or corporate packages, please contact our support office.",
+        "venue-tag": "Venue & Map",
+        "venue-desc": "* Precise room locations within the campus will be provided along with a detailed map via email after registration.",
+        "venue-link-text": "View Official Access Guide",
+        "faq-title": "Frequently Asked Questions",
+        "apply-title": "Contact Us",
+        "apply-desc": "If you have any questions or inquiries about the course, please feel free to contact us at the dedicated email address below.<br>Clicking the email address will automatically open your email software.",
+        "apply-note": "※If urgent, please write 'URGENT' in the subject line. We will get back to you as soon as possible.",
+        "cta-band-title": "Start with a single lecture,<br>and kickstart your AI workflow transformation.",
+        "cta-band-btn": "Enroll Now",
+        "modal-title-text": "All Detailed Participant & Organizer Testimonials",
+        "price-tag-1": "60 min / class",
+        "price-tag-2": "Hands-on Practice"
+      }
+    };
+
+    // System Language State
+    let currentLang = 'ja';
+
+    // Simulation data (No AI overtime INCREASES over the years now)
+    const chartData = {
+      noAi: { overtime: [45, 50, 55, 62, 70], speed: [1.0, 1.0, 1.0, 1.0, 1.0], overallOvertime: 70, overallSpeed: 1.0 },
+      withAi: { overtime: [45, 45, 45, 45, 45], speed: [1.2, 1.8, 2.5, 3.5, 4.2], overallOvertime: 45, overallSpeed: 4.2 }
+    };
+    let isAiActive = false;
+
+    // 10 classes data
+    const coursesData = {
+      ja: [
+        { num: "01", title: "AIの基本と対話のコツ", desc: "ChatGPT等の仕組みを正しく理解し、思い通りのアウトプットを得る基本を学びます。", dates: ["6/3(水)", "13:00", "6/6(土)", "10:00"] },
+        { num: "02", title: "長文の要約と情報整理", desc: "大量のドキュメントや議事録を構造化し、要点をリストアップする実務スキル。", dates: ["6/10(水)", "13:00", "6/13(土)", "10:00"] },
+        { num: "03", title: "ビジネス文書・メール作成", desc: "シチュエーションに応じた適切な挨拶文、提案書、プレスリリース作成の効率化。", dates: ["6/17(水)", "13:00", "6/20(土)", "10:00"] },
+        { num: "04", title: "アイデア出しと企画の壁打ち", desc: "新規事業やイベント、マーケティング施策のブレスト役としてAIを使い倒す手法。", dates: ["6/24(水)", "13:00", "6/27(土)", "10:00"] },
+        { num: "05", title: "データ分析と視覚化の自動化", desc: "数値データをAIに読み込ませ、傾向の分析や適切なグラフ生成を指示する方法。", dates: ["7/1(水)", "13:00", "7/4(土)", "10:00"] },
+        { num: "06", title: "英語対応と海外リサーチ", desc: "高度な翻訳はもちろん、海外の最新文献やトレンドを効率よく解読・収集する技。", dates: ["7/8(水)", "13:00", "7/11(土)", "10:00"] },
+        { num: "07", title: "プログラミング不要の業務効率化", desc: "Excelマクロや自動化スクリプトの作成、ツール連携をAIのコード生成で実現。", dates: ["7/15(水)", "13:00", "7/18(土)", "10:00"] },
+        { num: "08", title: "プレゼン資料の構成案作成", desc: "聞き手に響くスライドのストーリー構成や、各ページの骨子・テキスト案の構築。", dates: ["7/22(水)", "13:00", "7/25(土)", "10:00"] },
+        { num: "09", title: "AI利用のセキュリティとリスク", desc: "機密情報の漏洩を防ぐ設定や、著作権、ハルシネーション（嘘）への対策知識。", dates: ["7/29(水)", "13:00", "8/1(土)", "10:00"] },
+        { num: "10", title: "社内AI導入とチーム活用", desc: "個人利用に留まらず、組織全体で効率よく安全にAIを使いこなすための環境づくり。", dates: ["8/5(水)", "13:00", "8/8(土)", "10:00"] }
+      ],
+      en: [
+        { num: "01", title: "AI Basics & Prompting Tips", desc: "Master the structure of LLMs like ChatGPT and learn best dialogue frameworks to retrieve desired outputs.", dates: ["Jun 3 (Wed)", "13:00", "Jun 6 (Sat)", "10:00"] },
+        { num: "02", title: "Summarization & Info Synthesis", desc: "Structure high-volume documents and draft dynamic meeting summaries to extract key action items.", dates: ["Jun 10 (Wed)", "13:00", "Jun 13 (Sat)", "10:00"] },
+        { num: "03", title: "Business Writing & Email Automation", desc: "Accelerate creation of professional pitches, proposals, press releases, and structured correspondence.", dates: ["Jun 17 (Wed)", "13:00", "Jun 20 (Sat)", "10:00"] },
+        { num: "04", title: "Brainstorming & Strategic Sparring", desc: "Use AI as an active conversational partner to develop marketing campaigns and new business models.", dates: ["Jun 24 (Wed)", "13:00", "Jun 27 (Sat)", "10:00"] },
+        { num: "05", title: "Data Analysis & Visual Dashboards", desc: "Uncover insights in spreadsheets and instruct AI to construct clean analytical graphs autonomously.", dates: ["Jul 1 (Wed)", "13:00", "Jul 4 (Sat)", "10:00"] },
+        { num: "06", title: "English & Global Market Research", desc: "Translate high-context papers and efficiently analyze emerging global industry trends.", dates: ["Jul 8 (Wed)", "13:00", "Jul 11 (Sat)", "10:00"] },
+        { num: "07", title: "No-Code Workflow Efficiency", desc: "Generate functional macro codes and automate routines using direct code generation assistants.", dates: ["Jul 15 (Wed)", "13:00", "Jul 18 (Sat)", "10:00"] },
+        { num: "08", title: "Structuring Persuasive Presentations", desc: "Draft high-converting presentation structures, slide outlines, and verbal narratives with AI.", dates: ["Jul 22 (Wed)", "13:00", "Jul 25 (Sat)", "10:00"] },
+        { num: "09", title: "AI Security & Privacy Risk mitigation", desc: "Learn essential data opt-out settings, copyright boundaries, and hallucination safety check protocols.", dates: ["Jul 29 (Wed)", "13:00", "Aug 1 (Sat)", "10:00"] },
+        { num: "10", title: "AI Integration in Organizations", desc: "Transform individual gains into institutional habits by setting team standards and collaborative workflows.", dates: ["Aug 5 (Wed)", "13:00", "Aug 8 (Sat)", "10:00"] }
+      ]
+    };
+
+    // FAQ Database
+    const faqData = {
+      ja: [
+        { q: "パソコンの操作に自信がありませんが受講できますか？", a: "はい、大歓迎です。一般的な文字入力やブラウザによる検索操作ができれば、AIの利用に専門知識は不要です。少人数の対面形式ですので、安心してお気軽にご参加ください。" },
+        { q: "必要な持ち物はありますか？", a: "普段お使いのノートパソコン（Wi-Fi接続が可能な端末）と、筆記用具をご持参ください。講義内で実際にブラウザ上でお手元のPCを操作しながら受講していただきます。" },
+        { q: "全10回すべて受講しないといけないでしょうか？", a: "いいえ。各回は1講座完結の独立したカリキュラムとなっています。ご自身の学びたいテーマや、スケジュールが合う回のみ単発（1回単位）で自由にご受講いただけます。" },
+        { q: "受講料の支払い方法や領収書の発行について教えてください。", a: "事前オンラインクレジットカード決済、または当日会場での現金お支払いに対応しています。法人名義での領収書・請求書対応が必要な場合は、お申し込み時にお申し付けください。" }
+      ],
+      en: [
+        { q: "I'm not confident with computers. Can I still join?", a: "Absolutely. If you can type text and navigate a web browser, you do not need any advanced IT background. Since it's a small, face-to-face workshop, we support you closely." },
+        { q: "What do I need to bring to class?", a: "Please bring your own notebook laptop (capable of connecting to Wi-Fi) and writing utensils. You will practice directly on your browser during the sessions." },
+        { q: "Do I have to register for all 10 sessions?", a: "No. Each session is standalone and fully complete. You can choose to register only for specific topics that interest you or fit your schedule." },
+        { q: "What are the payment methods and can I get an invoice?", a: "We support pre-registration online credit card payment or on-site payment. Corporate receipts or invoices can also be provided upon request." }
+      ]
+    };
+
+    // Expanded Testimonial modal database
+    const allTestimonials = {
+      ja: [
+        { name: "M.K さん (沖縄市 / 事務職)", tag: "実務効率化", text: "毎月の売上報告資料の分析から、社内向けメールの一括作成が劇的にスピードアップしました。AIはエンジニアだけのものと思っていましたが、プログラミング知識ゼロでも普段の日本語で指示するだけでここまでの相棒になるとは思いませんでした。手取り足取りの対面だからこそ得られた体験です。" },
+        { name: "T.A さん (那覇市 / 会社経営)", tag: "DXマネジメント", text: "経営者として、いかにAIに的確な役割を割り当て、部下のように指示を出すかというマネジメント視点を学べたのが大きな収穫でした。これまでは一方的にツールとして使っていましたが、思考の壁打ち役として使うことで、社内のビジネス企画立案のコストが3分の1になり、新規事業創出に専念できています。" },
+        { name: "S.N さん (宜野湾市 / 個人事業主)", tag: "初心者サポート", text: "パソコン操作がおぼつかないため気後れしていましたが、講師の大森先生やスタッフの方が操作画面を直接見ながら優しくフォローしてくれました。単なる動画授業と違って、自分に馴染みのある日常の悩みをお題にしてその場で解決していく実戦ワーク形式が本当にありがたかったです。" },
+        { name: "比嘉 氏 (沖縄IT教育連携コーディネーター / 企画者)", tag: "企画者・コーディネーター", text: "琉球大学の公開講座として地域DXを加速させるために企画しました。社会人の方々が最初は不安げに入室され、わずか1時間の講義後には『これなら明日から使える！』と明るい笑顔で帰っていく姿が本当に印象的です。地域産業の活性化に向け、一歩先を行くAI活用教育の基盤が整いつつあると感じています。" }
+      ],
+      en: [
+        { name: "M.K (Okinawa City / Office Admin)", tag: "Admin Productivity", text: "The preparation times for our monthly operational reporting and marketing emails dropped in half. I previously thought AI was strictly for programmers. To realize it acts as an immediate intellectual co-pilot through standard everyday language has completely redefined my productivity. The in-person help was key." },
+        { name: "T.A (Naha City / Managing Director)", tag: "Executive Strategy", text: "Learning how to assign specialized tasks and manage AI like a highly trained digital executive was my biggest takeaway. Instead of searching, using it as a business strategy sounding-board has reduced draft planning overhead by nearly 70%, freeing up vital executive energy for business development." },
+        { name: "S.N (Ginowan City / Freelance Creator)", tag: "In-Person Support", text: "I was extremely self-conscious about my basic computer skills, but Professor Omori and his team provided gentle, individualized support by watching my screen in real time. Unlike a pre-recorded online course, resolving real life issues during workshops made it easy to follow." },
+        { name: "Mr. Higa (Regional DX Coordinator / Program Architect)", tag: "Organizer Voice", text: "We developed this as a flagship Ryukyu University course to accelerate local enterprise digitisation. It is incredibly rewarding to witness busy professionals walk in with hesitation and leave just 60 minutes later with an eager smile, fully confident in deploying prompt workflows. This is building crucial foundations for the local economy." }
+      ]
+    };
+
+    // Change UI Language
+    function changeLanguage(lang) {
+      currentLang = lang;
+
+      // Update active class on toggle buttons
+      document.getElementById('lang-ja').classList.toggle('active', lang === 'ja');
+      document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+
+      // Translate standard i18n marked elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+
+      // Re-render dynamically generated lists
+      renderCourses();
+      renderFAQs();
+      updateChart(isAiActive ? 'withAi' : 'noAi');
+    }
+
+    // Dynamic rendering of courses schedule table
+    function renderCourses() {
+      const table = document.getElementById('courseTable');
+      table.innerHTML = "";
+      const list = coursesData[currentLang];
+      list.forEach(c => {
+        const satLabel = currentLang === 'ja' ? '土' : 'Sat';
+        const wedLabel = currentLang === 'ja' ? '水' : 'Wed';
+        table.innerHTML += `
+         <tr class="course-row">
+           <td class="num">${c.num}</td>
+           <td class="title-cell"><b>${c.title}</b></td>
+           <td class="desc-cell"><span>${c.desc}</span></td>
+           <td class="date-cell">
+             <span style="font-size: 13px; color: var(--blue-deep); font-weight: 800;">${c.dates[0]}</span>
+             <div class="t">${c.dates[1]}</div>
+           </td>
+           <td class="date-cell" style="background: #fdfaf2; border-left: 1px solid var(--line);">
+             <span style="font-size: 13px; color: #d97706; font-weight: 800;">${c.dates[2]}</span>
+             <div class="t">${c.dates[3]}</div>
+           </td>
+         </tr>
+       `;
+      });
+    }
+
+    // Dynamic rendering of FAQ list
+    function renderFAQs() {
+      const faqList = document.getElementById('faqList');
+      faqList.innerHTML = "";
+      const list = faqData[currentLang];
+      list.forEach((f, idx) => {
+        faqList.innerHTML += `
+         <div class="faq-item" onclick="toggleFaq(${idx})">
+           <div class="q-mark">Q</div>
+           <div class="q">${f.q}</div>
+           <div class="chev" id="chev-${idx}">▼</div>
+           <div class="a" id="ans-${idx}" style="display:none; grid-column: 1 / 4; padding: 12px 0 4px 42px;">${f.a}</div>
+         </div>
+       `;
+      });
+    }
+
+    // FAQ Accordion open/close toggle
+    function toggleFaq(idx) {
+      const ans = document.getElementById(`ans-${idx}`);
+      const chev = document.getElementById(`chev-${idx}`);
+      const isOpened = ans.style.display === 'block';
+
+      ans.style.display = isOpened ? 'none' : 'block';
+      chev.style.transform = isOpened ? 'rotate(0deg)' : 'rotate(180deg)';
+    }
+
+    // Smooth scroll helper
+    function smoothScroll(targetSelector) {
+      const target = document.querySelector(targetSelector);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Testimonials Modal Control
+    function openTestimonialModal() {
+      const modal = document.getElementById('testimonialModal');
+      const reviewsArea = document.getElementById('modalReviews');
+      reviewsArea.innerHTML = "";
+
+      const list = allTestimonials[currentLang];
+      list.forEach(r => {
+        reviewsArea.innerHTML += `
+         <div class="modal-review-item">
+           <div class="modal-review-header">
+             <div class="modal-reviewer-title">${r.name}</div>
+             <span class="modal-reviewer-tag">${r.tag}</span>
+           </div>
+           <p class="modal-review-text">${r.text}</p>
+         </div>
+       `;
+      });
+
+      modal.classList.add('active');
+    }
+    function closeTestimonialModal() {
+      document.getElementById('testimonialModal').classList.remove('active');
+    }
+
+    // Interactive Chart Simulator Controls
+    function toggleSim(active) {
+      isAiActive = active;
+      document.getElementById('btnNoAi').classList.toggle('active', !active);
+      document.getElementById('btnWithAi').classList.toggle('active', active);
+      const mode = active ? 'withAi' : 'noAi';
+      const data = chartData[mode];
+
+      const overtimeUnit = currentLang === 'ja' ? '時間' : ' hrs';
+      const speedUnit = currentLang === 'ja' ? '倍' : 'x Boost';
+
+      animateCounter('valOvertime', parseInt(document.getElementById('valOvertime').textContent), data.overallOvertime, overtimeUnit);
+      animateCounter('valSpeed', parseFloat(document.getElementById('valSpeed').textContent), data.overallSpeed, speedUnit, true);
+      updateChart(mode);
+    }
+
+    function animateCounter(id, start, end, unit, isFloat = false) {
+      const obj = document.getElementById(id);
+      const range = end - start;
+      const duration = 450;
+      let startTime = null;
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const current = start + range * progress;
+        obj.innerHTML = `${isFloat ? current.toFixed(1) : Math.round(current)} <span class="unit" style="font-size:14px; font-weight:500;">${unit}</span>`;
+        if (progress < 1) window.requestAnimationFrame(step);
+      }
+      window.requestAnimationFrame(step);
+    }
+
+    function updateChart(mode) {
+      const data = chartData[mode];
+      const points = [];
+      const chartContent = document.querySelector('.chart-content');
+      if (!chartContent) return;
+      const chartRect = chartContent.getBoundingClientRect();
+      const chartHeight = chartRect.height;
+      const chartWidth = chartRect.width;
+
+      for (let i = 0; i < 5; i++) {
+        const bar = document.getElementById(`bar${i}`);
+        const dot = document.getElementById(`dot${i}`);
+        if (!bar || !dot) continue;
+        const speedVal = data.speed[i];
+
+        // Map productivity (speed) height to chart percentages
+        const barHeight = 15 + ((speedVal - 0.5) / 4.0) * 80;
+        bar.style.height = `${barHeight}%`;
+
+        // Overtime hours mapping (overtime increases over time for No-AI, and decreases for With-AI)
+        const overtimeVal = data.overtime[i];
+        const dotBottomPercent = (overtimeVal / 100) * 90 + 5;
+        dot.style.bottom = `${dotBottomPercent}%`;
+
+        const x = (i * 0.2 + 0.1) * chartWidth;
+        const y = chartHeight * (1 - (dotBottomPercent / 100));
+        points.push({ x, y });
+      }
+      const dPath = points.map((p, index) => `${index === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
+      const trendLine = document.getElementById('trendLine');
+      if (trendLine) {
+        trendLine.setAttribute('d', dPath);
+      }
+    }
+
+    function showTooltip(index) {
+      const mode = isAiActive ? 'withAi' : 'noAi';
+      const data = chartData[mode];
+      const years = currentLang === 'ja' ? ["2026年", "2027年", "2028年", "2029年", "2030年"] : ["Year 2026", "Year 2027", "Year 2028", "Year 2029", "Year 2030"];
+      const tooltip = document.getElementById('chartTooltip');
+      const overtimeText = currentLang === 'ja' ? "平均残業" : "Avg Overtime";
+      const capacityText = currentLang === 'ja' ? "生産能力" : "Capacity Boost";
+      const hourText = currentLang === 'ja' ? "時間" : " hrs";
+      const timesText = currentLang === 'ja' ? "倍" : "x";
+
+      tooltip.innerHTML = `
+       <div style="font-weight: 700; margin-bottom: 4px; color:#fff;">${years[index]}</div>
+       <div>${overtimeText}: <span style="color:#ff4d4d; font-weight:700;">${data.overtime[index]}${hourText}</span></div>
+       <div>${capacityText}: <span style="color:var(--yellow); font-weight:700;">${data.speed[index].toFixed(1)}${timesText}</span></div>
+     `;
+      const dot = document.getElementById(`dot${index}`);
+      const parent = document.querySelector('.data-visual');
+      const dotRect = dot.getBoundingClientRect();
+      const parentRect = parent.getBoundingClientRect();
+      tooltip.style.left = `${dotRect.left - parentRect.left + 6}px`;
+      tooltip.style.top = `${dotRect.top - parentRect.top - 12}px`;
+      tooltip.classList.add('active');
+    }
+
+    function hideTooltip() {
+      document.getElementById('chartTooltip').classList.remove('active');
+    }
+
+    // Initialize elements on load
+    window.onload = function () {
+      renderCourses();
+      renderFAQs();
+      updateChart('noAi');
+    }
+
+    // Keep chart line perfectly scaled when window resizes
+    window.addEventListener('resize', () => {
+      updateChart(isAiActive ? 'withAi' : 'noAi');
+    });
+  </script>
+
+  <!-- Floating Banner CTA -->
+  <div class="floating-banner" id="floatingBanner">
+    <button class="floating-banner-close" onclick="document.getElementById('floatingBanner').style.display='none'" aria-label="Close">×</button>
+    <div class="floating-banner-text">
+      <span data-i18n="floating-badge">＼定員に達し次第終了／</span><br>
+      <div data-i18n="floating-text">仕事が終わらないのは、<br>AIを知らないから。</div>
+    </div>
+    <button class="btn btn-yellow arrow-r" onclick="window.open('https://ercll.u-ryukyu.narayun.jp', '_blank')" data-i18n="floating-btn">今すぐ申し込む</button>
+  </div>
+</body>
+
+</html>
