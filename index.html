@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>琉球大学 公開講座 — 仕事が終わらないのは、AIを知らないから。</title>
+  <title>琉球大学 公開講座 — あなただけのAI棒を手に入れよう</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="03.png" type="image/gif">
 
@@ -24,6 +24,15 @@
 
     * {
       box-sizing: border-box;
+    }
+
+    .sp-br {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .sp-br {
+        display: initial;
+      }
     }
 
     html,
@@ -94,10 +103,11 @@
     }
 
     .brand .logo-text .univ {
-      font-size: 15px;
+      font-size: 32px;
       font-weight: 800;
       color: var(--blue-deep);
       letter-spacing: 0.05em;
+      line-height: 1.2;
     }
 
     .brand .logo-text .course {
@@ -400,12 +410,12 @@
 
     .hero-collage .photo-main {
       position: absolute;
-      top: 30px;
-      right: 20px;
-      width: 440px;
-      height: 310px;
+      top: -210px;
+      right: -30px;
+      width: 540px;
+      height: 540px;
       overflow: hidden;
-      border-radius: var(--radius);
+      border-radius: 50%;
       box-shadow: 0 16px 36px rgba(20, 30, 60, .18);
       border: 4px solid white;
     }
@@ -612,11 +622,16 @@
       flex-direction: column;
       justify-content: space-between;
       font-size: 10px;
-      color: rgba(255, 255, 255, 0.5);
-      font-weight: 600;
+      color: var(--yellow);
+      font-weight: 700;
       text-align: right;
       width: 40px;
       padding-bottom: 24px;
+    }
+
+    .y-axis-labels-right {
+      color: #ff4d4d;
+      text-align: left;
     }
 
     .chart-content {
@@ -802,6 +817,36 @@
       background: #fff;
     }
 
+    .review-info .name {
+      font-weight: 800;
+      color: var(--blue-deep);
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+
+    .ai-ruby {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      vertical-align: bottom;
+      line-height: 1;
+      margin: 0 2px;
+    }
+    
+    .ai-ruby-top {
+      font-size: 0.45em;
+      background: #fff;
+      color: var(--blue-deep);
+      border-radius: 50%;
+      width: 1.8em;
+      height: 1.8em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
     .instructor-title {
       font-size: 14px;
       color: var(--blue-deep);
@@ -910,6 +955,7 @@
       display: grid;
       grid-template-columns: 60px 1.5fr 3.5fr 1fr 1fr;
       align-items: stretch;
+      min-height: 120px;
     }
 
     .course-row+.course-row {
@@ -1031,11 +1077,16 @@
     }
 
     .skills-note {
-      color: var(--ink-2);
-      font-size: 14px;
-      text-align: center;
-      margin: 24px 0 0;
+      color: #333;
+      font-size: 15px;
+      text-align: left;
+      margin: 32px 0 0;
       font-weight: 500;
+      background: #fdfaf2;
+      border: 2px solid #febf1c;
+      border-radius: 8px;
+      padding: 16px 24px;
+      line-height: 1.7;
     }
 
     /* Strengths */
@@ -1910,9 +1961,19 @@
       .floating-banner-text span {
         font-size: 10px;
       }
+      .btn-yellow {
+        font-size: 18px;
+        padding: 16px 24px;
+        width: 100%;
+        max-width: 100%;
+        white-space: normal;
+        line-height: 1.4;
+      }
+
       .floating-banner .btn-yellow {
-        font-size: 14px;
-        padding: 10px 16px;
+        font-size: 13px;
+        padding: 10px 12px;
+        width: auto;
       }
       .floating-banner-close {
         top: -16px;
@@ -1924,15 +1985,26 @@
       }
 
       .site-header {
-        padding: 12px 20px;
+        padding: 12px 16px;
+      }
+
+      .header-cta {
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+        width: auto;
       }
 
       .brand img {
-        height: 42px;
+        height: 38px;
       }
 
       .brand .logo-text {
-        display: none;
+        display: flex;
+        padding-left: 8px;
+      }
+
+      .brand .logo-text .univ {
+        font-size: 26px;
       }
 
       .nav {
@@ -1940,7 +2012,7 @@
       }
 
       .hero h1 {
-        font-size: 28px !important;
+        font-size: calc(2rem + 3vw) !important;
         white-space: normal !important;
         word-break: break-all !important;
       }
@@ -1966,7 +2038,24 @@
       }
 
       .str-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .str-col {
+        padding: 8px;
+      }
+      .str-col img {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 8px;
+      }
+      .str-col h4 {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+      .str-col p {
+        font-size: 12px;
+        line-height: 1.4;
       }
 
       .testimonials-preview {
@@ -2012,6 +2101,36 @@
       .cta-band .right {
         display: none;
       }
+
+      /* Mobile layout optimizations */
+      body {
+        font-size: 15px;
+      }
+      .wrap {
+        padding: 0 16px;
+      }
+      .hero {
+        padding: 32px 16px;
+      }
+      .hero-title {
+        font-size: 36px !important;
+      }
+      .hero-title-2 {
+        font-size: 28px !important;
+      }
+      .hero-badges {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .course-table-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -16px;
+        padding: 0 16px 16px;
+      }
+      .course-table {
+        min-width: 680px;
+      }
     }
   </style>
 </head>
@@ -2023,7 +2142,7 @@
       <!-- Ryukyu University Official Logo Integration -->
       <img src="03.png" alt="University of the Ryukyus Logo">
       <div class="logo-text">
-        <span class="univ" data-i18n="header-brand-univ">琉球大学</span>
+        <span class="univ" data-i18n="header-brand-univ"><span style="white-space: nowrap;">国立大学法人</span>　<span style="white-space: nowrap;">琉球大学</span></span>
       </div>
     </div>
     <div class="header-right">
@@ -2038,19 +2157,17 @@
 
   <section class="hero">
     <div class="hero-left">
-      <div class="hero-eyebrow" data-i18n="hero-eyebrow">ビジネスパーソン・経営者のための</div>
-
-      <h1 style="font-size: calc(2.0rem + 2.0vw); line-height: 1.3; word-break: keep-all; overflow-wrap: break-word;">
-        <span class="accent-underline" style="display: inline-block;" data-i18n="hero-title-1">仕事が終わらないのは、</span><br>
-        <span class="accent-underline" style="display: inline-block; margin-top: 8px;"
-          data-i18n="hero-title-2">AIを知らないから。</span>
+      <h1 style="font-size: calc(2.8rem + 3.0vw); font-weight: 900; line-height: 1.35; letter-spacing: 0.05em; word-break: keep-all; overflow-wrap: break-word; text-shadow: 0 4px 20px rgba(0,0,0,0.5); margin-bottom: 24px;">
+        <span class="accent-underline" style="display: inline-block;" data-i18n="hero-title-1">あなただけの</span><br>
+        <span class="accent-underline" style="display: inline-block; margin-top: 16px;"
+          data-i18n="hero-title-2"><span style="color: var(--yellow); font-size: 1.6em; font-weight: 900; text-shadow: 0 4px 30px rgba(254, 191, 28, 0.4);"><ruby>A<rt style="font-weight: 900; font-size: 0.2em; color: var(--yellow); text-align: center;">あ</rt></ruby><ruby>I<rt style="font-weight: 900; font-size: 0.2em; color: var(--yellow); text-align: center;">い</rt></ruby>棒</span><br>手に入れよう</span>
       </h1>
 
       <div class="hero-sub" data-i18n="hero-subtitle">琉球大学 公開講座</div>
 
       <p class="hero-lead" data-i18n="hero-lead-text">
-        「人手が足りない」と嘆く前に、AIという信頼できる副操縦士を。<br>
-        全10回の厳選されたステップで、あなたの実務を「AIネイティブ」へ即日アップデートします。
+        「時間がない」と悩む前に、<br class="sp-br">あなただけの「相棒（AI棒）」を。<br>
+        全10回の厳選されたステップで、<br>あなたの実務を「AIネイティブ」へ<br class="sp-br">即日アップデートします。
       </p>
       <div class="hero-badges">
         <div class="hbadge">
@@ -2058,20 +2175,16 @@
           <h4 data-i18n="badge-1-h">初心者歓迎</h4>
           <p data-i18n="badge-1-p">基礎から丁寧に</p>
         </div>
+
         <div class="hbadge">
-          <img src="https://img.icons8.com/fluency/96/briefcase.png" alt="Briefcase Icon">
-          <h4 data-i18n="badge-2-h">仕事に直結</h4>
-          <p data-i18n="badge-2-p">明日から使える力</p>
+          <img src="https://img.icons8.com/fluency/96/calendar.png" alt="Calendar Icon">
+          <h4 data-i18n="badge-3-h">単発受講OK</h4>
+          <p data-i18n="badge-3-p">好きな回だけ参加</p>
         </div>
         <div class="hbadge">
-          <img src="https://img.icons8.com/fluency/96/shield.png" alt="Shield Icon">
-          <h4 data-i18n="badge-3-h">安全・リスク管理</h4>
-          <p data-i18n="badge-3-p">正しい活用知識</p>
-        </div>
-        <div class="hbadge">
-          <img src="https://img.icons8.com/fluency/96/conference-call.png" alt="Conference Icon">
-          <h4 data-i18n="badge-4-h">対面少人数制</h4>
-          <p data-i18n="badge-4-p">高い学習効果</p>
+          <img src="https://img.icons8.com/fluency/96/laptop.png" alt="Laptop Icon">
+          <h4 data-i18n="badge-4-h">オンライン受講可</h4>
+          <p data-i18n="badge-4-p">どこからでも参加</p>
         </div>
       </div>
       <div class="hero-ctas">
@@ -2084,10 +2197,10 @@
 
     <div class="hero-collage">
       <div class="dots-tl"></div>
-      <div class="sq-tr"></div>
+
       <!-- Main Campus Photo Integration -->
       <div class="photo-main">
-        <img src="琉大様子１.png" alt="University of the Ryukyus Beautiful Campus">
+        <img src="ai_partner_pointillism.png" alt="University of the Ryukyus Beautiful Campus">
       </div>
       <div class="dots-br"></div>
       <div class="photo-shurijo">
@@ -2113,7 +2226,7 @@
       <div class="data-visual">
         <div
           style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
-          <div class="graph-label" style="margin-bottom: 0;" data-i18n="sim-label">AI導入効果予測シミュレーター (2026-2030)</div>
+          <div class="graph-label" style="margin-bottom: 0;" data-i18n="sim-label">データに基づく変化</div>
           <div class="sim-toggle-container">
             <button class="sim-toggle-btn active" id="btnNoAi" onclick="toggleSim(false)"
               data-i18n="sim-no-ai">現状維持</button>
@@ -2121,21 +2234,17 @@
               ✨</button>
           </div>
         </div>
-        <div class="sim-metrics">
-          <div class="metric-card">
-            <div class="title" data-i18n="metric-overtime-label">平均残業時間（月）</div>
-            <div class="value" id="valOvertime">45 <span class="unit" data-i18n="unit-hours">時間</span></div>
-          </div>
+        <div class="sim-metrics" style="grid-template-columns: 1fr;">
           <div class="metric-card highlight">
-            <div class="title" data-i18n="metric-speed-label">平均業務処理能力</div>
-            <div class="value" id="valSpeed">1.0 <span class="unit" data-i18n="unit-times">倍</span></div>
+            <div class="title" data-i18n="metric-speed-label">労働力不足推計（2030年）</div>
+            <div class="value" id="valShortage">644 <span class="unit" data-i18n="unit-times">万人</span></div>
           </div>
         </div>
         <div class="chart-wrapper">
           <div class="y-axis-labels">
-            <span data-i18n="chart-y-max">高効率</span>
-            <span data-i18n="chart-y-avg">平均</span>
-            <span data-i18n="chart-y-low">低効率</span>
+            <span data-i18n="chart-y-prod-max">700万人</span>
+            <span data-i18n="chart-y-prod-avg">350万人</span>
+            <span data-i18n="chart-y-prod-low">0万人</span>
           </div>
           <div class="chart-content">
             <div class="grid-line" style="bottom: 0%;"></div>
@@ -2152,7 +2261,7 @@
                   <div class="bar bar-active" id="bar0"></div>
                 </div>
                 <div class="line-dot" id="dot0"></div>
-                <div class="year-label">2026</div>
+                <div class="year-label" data-i18n="chart-x-1">2020年</div>
               </div>
               <div class="chart-col" onmouseover="showTooltip(1)" onmouseout="hideTooltip()">
                 <div class="bar-container">
@@ -2160,7 +2269,7 @@
                   <div class="bar bar-active" id="bar1"></div>
                 </div>
                 <div class="line-dot" id="dot1"></div>
-                <div class="year-label">2027</div>
+                <div class="year-label" data-i18n="chart-x-2">2025年</div>
               </div>
               <div class="chart-col" onmouseover="showTooltip(2)" onmouseout="hideTooltip()">
                 <div class="bar-container">
@@ -2168,54 +2277,34 @@
                   <div class="bar bar-active" id="bar2"></div>
                 </div>
                 <div class="line-dot" id="dot2"></div>
-                <div class="year-label">2028</div>
-              </div>
-              <div class="chart-col" onmouseover="showTooltip(3)" onmouseout="hideTooltip()">
-                <div class="bar-container">
-                  <div class="bar bar-bg"></div>
-                  <div class="bar bar-active" id="bar3"></div>
-                </div>
-                <div class="line-dot" id="dot3"></div>
-                <div class="year-label">2029</div>
-              </div>
-              <div class="chart-col" onmouseover="showTooltip(4)" onmouseout="hideTooltip()">
-                <div class="bar-container">
-                  <div class="bar bar-bg"></div>
-                  <div class="bar bar-active" id="bar4"></div>
-                </div>
-                <div class="line-dot" id="dot4"></div>
-                <div class="year-label">2030</div>
+                <div class="year-label" data-i18n="chart-x-3">2030年</div>
               </div>
             </div>
           </div>
         </div>
         <div class="chart-legend">
           <span class="legend-item"><span class="legend-color" style="background: var(--yellow);"></span><span
-              data-i18n="legend-productivity">生産性（処理能力）</span></span>
-          <span class="legend-item"><span class="legend-color"
-              style="background: #ff4d4d; border-radius: 50%;"></span><span
-              data-i18n="legend-overtime">平均残業時間</span></span>
+              data-i18n="legend-productivity">労働力不足数（推計）</span></span>
         </div>
         <div class="chart-source" style="font-size: 11px; color: rgba(255, 255, 255, 0.6); text-align: right; margin-top: 12px;" data-i18n="chart-source">
-          ※出典：各種公的統計およびAI導入効果に関する研究レポートを基に算出（推計値）
+          ※出典：パーソル総合研究所「労働市場の未来推計2030」を基に作成
         </div>
         <div id="chartTooltip" class="chart-tooltip"></div>
       </div>
       <div class="why-grid">
         <div class="why-item">
-          <h3 data-i18n="why-item-1-title">01. 労働人口減少への唯一にして最大の対抗策</h3>
+          <h3 data-i18n="why-item-1-title">01. 労働人口減少対策に対する大きな一歩</h3>
           <p data-i18n="why-item-1-desc">
-            激化する人手不足を前に、採用コストの上昇は止まりません。新人を雇用するのではなく、既存の各チームメンバーが「デジタルAI副操縦士」を味方につけることが、安定経営と組織の持続可能性を確固たるものにします。</p>
+            人手不足が続く中、新しい人材の採用にかかるコストや負担は年々大きくなっています。現状の労働力でも対応できる力をもたらす、既存の各チームメンバーが「<strong style="color: var(--yellow);">デジタルAI副操縦士</strong>」を味方につけることが、安定経営と組織の持続可能性を確固たるものにします。</p>
         </div>
         <div class="why-item">
-          <h3 data-i18n="why-item-2-title">02. 創出される圧倒的な知的生産力</h3>
-          <p data-i18n="why-item-2-desc">実務レベルでAIを使いこなせる人は、非活用者と比較して数倍～十数倍 of
-            のスピードで高度なアウトプットを引き出します。この能力格差はもはや残業時間やマンパワーでカバーできる範疇を超えています。</p>
+          <h3 data-i18n="why-item-2-title">02. 創出される「298万人分」の労働力</h3>
+          <p data-i18n="why-item-2-desc">2030年には日本全体で644万人の労働力が不足すると予測されています。しかし、AIなどの技術革新による業務代替・省人化によって、そのうち約298万人分の労働需要をカバーできると推計されています。AIは既存のマンパワーを凌駕する生産能力をもたらすため、人手不足による<strong style="color: var(--yellow);">残業時間の急激な増加</strong>を受け入れる<strong style="color: var(--yellow);">必要はない</strong>のです。</p>
         </div>
         <div class="why-item">
-          <h3 data-i18n="why-item-3-title">03. 組織と個人の市場価値を限界突破させる</h3>
+          <h3 data-i18n="why-item-3-title">03. 組織と個人の市場価値を引き出す</h3>
           <p data-i18n="why-item-3-desc">
-            定型事務や時間のかかる下調べ、構成検討をAIに役割分担し、人間はより戦略的で高次元な「意思決定」や「地域課題解決」に特化する。この役割分担の最適化こそが、最大の価値を生み出します。</p>
+            AIの基礎的な内容から実践までを段階的に学習できるため、初心者でも無理なくスキルを身につけられます。ここで得た知識と経験は、<strong style="color: var(--yellow);">将来的</strong>なあらゆる業務で<strong style="color: var(--yellow);">必ず生かしていく</strong>ことができます。</p>
         </div>
       </div>
     </div>
@@ -2232,10 +2321,10 @@
             style="font-size:16px; font-weight:500; color:var(--ink-2);" data-i18n="producer-title">特命准教授</span></h2>
       </div>
       <div class="instructor-message">
-        <h3 data-i18n="producer-heading">「最先端を、誰もが直感的に動かせる感動」をすべての方へ。</h3>
+        <h3 data-i18n="producer-heading">最先端AIを、誰もが直感的に。</h3>
         <p class="instructor-text" data-i18n="producer-text">
           情報技術の進歩は極めて早く、「置いていかれるのではないか」という漠然とした不安を抱える方は少なくありません。しかし実のところ、現代のITは専門技術ではなく、私たちの「言葉」や「想像力」で動かせる直感的な道具へと進化しています。つまり、最も強力な変革ツールが、今や誰でも使える状態で目の前に整っています。<br><br>
-          本講座では、体系的な視点をベースに、明日からの実務や地域課題にすぐ実装できる実践ワークを多数用意しました。対面だからこそ、人との繋がりを大切にしながら、つまずかずに「遊び」として体験できる最適なカリキュラムです。ぜひ一緒に体験しましょう。
+          本講座では、体系的な視点をベースに、明日からの実務や地域課題につながる実践ワークを多数用意しました。対面だからこそ、人との繋がりを大切にしながら、つまずかずに楽しみながら体験できる最適なカリキュラムです。ぜひ一緒に体験しましょう。
         </p>
         <p class="instructor-bio" data-i18n="producer-bio">
           <strong>【略略／Profile】</strong><br>
@@ -2255,6 +2344,12 @@
     <div class="courses-h">
       <h2 data-i18n="courses-title">講座の内容</h2>
       <span class="sub" data-i18n="courses-sub">（全10講座・各回独立構成）</span>
+      <div style="margin-top: 16px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="course_contents.html" target="_blank" class="btn btn-outline" style="font-size: 14px; padding: 10px 20px; border-width: 2px; border-radius: 30px; display: inline-flex; align-items: center; gap: 6px;" data-i18n="courses-pdf-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          講座内容の詳細をWebで開く
+        </a>
+      </div>
     </div>
 
     <div class="course-table-wrap">
@@ -2267,34 +2362,22 @@
 
     <!-- Skills Section (Separated visually into a full-width row below the table) -->
     <div class="skills-card-wide">
-      <h3 data-i18n="skills-title">この講座で身につくこと</h3>
+      <h3 data-i18n="skills-title">特におすすめの講座</h3>
       <div class="skills-grid">
         <div class="skills-item">
           <div class="skills-text-box">
-            <h4 data-i18n="skill-1-h">AIプロンプト設計力（対話と壁打ち）</h4>
-            <p data-i18n="skill-1-p">ChatGPTやClaudeをはじめ、AIとの最適な「言語対話」により高精度な解答を導くプロンプト技法が身につきます。</p>
+            <h4 data-i18n="skill-1-h">06. Geminiで考える ー 発想・比較・壁打ちの基礎</h4>
+            <p data-i18n="skill-1-p">新しいアイデアの発想や複数案の比較など、思考のパートナーとしてAIを活用する手法。</p>
           </div>
         </div>
         <div class="skills-item">
           <div class="skills-text-box">
-            <h4 data-i18n="skill-2-h">実務文書＆議事録のスピード生成</h4>
-            <p data-i18n="skill-2-p">長文資料からの重要な情報の抽出、構造化された会議要約、取引先向けビジネス文書の構築をほぼ一瞬で完了できます。</p>
-          </div>
-        </div>
-        <div class="skills-item">
-          <div class="skills-text-box">
-            <h4 data-i18n="skill-3-h">データ分析とグラフ視覚化の自動化</h4>
-            <p data-i18n="skill-3-p">Excel作業の効率化はもちろん、膨大な数値データをAIに読み込ませ、傾向分析や最適な分析グラフを指示・自動作成する手法を体得。</p>
-          </div>
-        </div>
-        <div class="skills-item">
-          <div class="skills-text-box">
-            <h4 data-i18n="skill-4-h">セキュリティ・ハルシネーション対策</h4>
-            <p data-i18n="skill-4-p">ビジネスで使用する際のデータプライバシー設定、嘘の情報（ハルシネーション）を見破る安全ガイドラインを習得します。</p>
+            <h4 data-i18n="skill-3-h">08. NotebookLM実践 ー 複数資料を整理し、理解を深める</h4>
+            <p data-i18n="skill-3-p">複数のドキュメントを組み合わせて整理し、より深く情報を理解するための実践的な使い方。</p>
           </div>
         </div>
       </div>
-      <p class="skills-note" data-i18n="skills-note-text">※各回はそれぞれ完結した実戦形式です。ご自身の興味や強化したい領域に合わせて1回だけの単発受講も大歓迎です。</p>
+      <p class="skills-note" data-i18n="skills-note-text">各回はそれぞれ完結した実戦形式のため、ご自身の興味や課題に合わせて<strong>1回だけの単発受講も大歓迎</strong>です！<br><br>もちろん、全10回を<strong>一貫して受講いただくことで、AIスキルを体系的に網羅し、さらに圧倒的な業務効率化を実現</strong>できます。<br><br>パソコン操作に自信がない初心者の方から、本格的に業務DXを推進したい方まで、幅広い方のご参加をお待ちしております。</p>
     </div>
   </section>
 
@@ -2303,23 +2386,23 @@
     <div class="str-grid">
       <div class="str-col">
         <img src="https://img.icons8.com/fluency/48/star.png" alt="Star">
-        <h4 data-i18n="strength-1-h">実務密着型カリキュラム</h4>
-        <p data-i18n="strength-1-p">難しい理論は後回し。明日からの仕事をラクにする具体例とワークを徹底追求。</p>
+        <h4 data-i18n="strength-1-h">「明日から使える」実践ワーク</h4>
+        <p data-i18n="strength-1-p">難しい理論より「体験」を重視。その場でPCを操作し、実務直結のAIスキルを体で覚えます。</p>
       </div>
       <div class="str-col">
         <img src="https://img.icons8.com/fluency/48/manager.png" alt="Facilitator">
-        <h4 data-i18n="strength-2-h">手厚い少人数・対面講義</h4>
-        <p data-i18n="strength-2-p">講師とプロットを共有する対面講義。わからない点をその場ですぐに直接解決。</p>
+        <h4 data-i18n="strength-2-h">つまずかない手厚いサポート</h4>
+        <p data-i18n="strength-2-p">パソコン操作に自信がなくても大丈夫。対面とオンラインの両方で、スタッフが丁寧にフォローします。</p>
       </div>
       <div class="str-col">
         <img src="https://img.icons8.com/fluency/48/up.png" alt="Up">
-        <h4 data-i18n="strength-3-h">段階的な体系的ステップ</h4>
-        <p data-i18n="strength-3-p">初心者から安全かつ確実に高度な活用領域へとステップアップできる親切構成。</p>
+        <h4 data-i18n="strength-3-h">無理なく学べる段階ステップ</h4>
+        <p data-i18n="strength-3-p">超初心者レベルからスタートし、全10回を通して自然にAIネイティブへと成長できるカリキュラムです。</p>
       </div>
       <div class="str-col">
-        <img src="https://img.icons8.com/fluency/48/help.png" alt="Support">
-        <h4 data-i18n="strength-4-h">信頼の大学公開講座</h4>
-        <p data-i18n="strength-4-p">琉球大学の信頼ある研究・地域推進活動として、中立、安全、高度な学習を担保。</p>
+        <img src="https://img.icons8.com/fluency/48/group.png" alt="Exchange">
+        <h4 data-i18n="strength-4-h">学生発信による新鮮な視点</h4>
+        <p data-i18n="strength-4-p">琉大生チームが企画・運営。柔軟なAI活用術に触れながら、世代を超えた学び合いが生まれます。</p>
       </div>
     </div>
     <div style="text-align: center; margin-top: 40px;">
@@ -2336,13 +2419,13 @@
           <div>
             <div class="review-stars">★★★★★</div>
             <p class="review-text" data-i18n="review-1-text">
-              「社会人の皆様が現場で直面する課題を、どうすればAIで解決できるかを学生チームで徹底的に議論しました。皆さんの業務が少しでも楽になるよう、実践的な内容にこだわっています！」</p>
+              「AIを活用する利点のひとつは、その利便性と、より多くの情報にたどり着けるよう導いてくれる点にあると思います。私の仕事にとっても非常に役立っています。」</p>
           </div>
           <div class="review-user">
-            <img class="review-avatar" src="大森先生仮.png" alt="企画した学生">
+            <img class="review-avatar" src="Gemini_Generated_Image_al9rpal9rpal9rpa.png" alt="企画した学生">
             <div class="review-info">
               <div class="name" data-i18n="review-1-name">琉球大学 学生チーム</div>
-              <div class="meta" data-i18n="review-1-meta">企画・運営リーダー / 3年</div>
+              <div class="meta" data-i18n="review-1-meta">国際教育センター / 3年</div>
             </div>
           </div>
         </div>
@@ -2350,13 +2433,13 @@
           <div>
             <div class="review-stars">★★★★★</div>
             <p class="review-text" data-i18n="review-2-text">
-              「私たちが普段から活用しているAIの便利さを、社会人の方にも届けたいという思いからスタートしました。AIに不慣れな方でも安心して参加できるよう、私たちが全力でサポートします！」</p>
+              「AIを活用してアルバイトのシフト管理システムを開発したことで、スタッフの出勤日をシステム上で簡単に把握できるようになりました。これまでのように一人ひとりに希望を聞いて回る手間が省け、業務効率が大幅に向上しました。」</p>
           </div>
           <div class="review-user">
-            <img class="review-avatar" src="大森先生仮.png" alt="企画した学生">
+            <img class="review-avatar" src="Gemini_Generated_Image_dm5b8idm5b8idm5b.png" alt="企画した学生">
             <div class="review-info">
               <div class="name" data-i18n="review-2-name">琉球大学 学生チーム</div>
-              <div class="meta" data-i18n="review-2-meta">サポート統括 / 4年</div>
+              <div class="meta" data-i18n="review-2-meta">教育学部 / 4年生</div>
             </div>
           </div>
         </div>
@@ -2377,11 +2460,12 @@
           </div>
         </div>
       </div>
+      <!-- 一時的に非表示（いつでも戻せます）
       <div style="text-align: center; margin-top: 40px;">
-        <!-- Fixed non-navigating link to pop up an interactive modal -->
         <button class="btn btn-outline" onclick="openTestimonialModal()"
           data-i18n="testi-more-btn">すべての参加者・企画者の声をもっと詳しく見る ↗</button>
       </div>
+      -->
     </div>
   </section>
 
@@ -2406,7 +2490,11 @@
         </div>
         <div class="price-meta-item">
           <div class="p-label" data-i18n="meta-label-limit">定員</div>
-          <div class="p-value" data-i18n="meta-val-limit">各回 少人数限定（先着順）</div>
+          <div class="p-value" data-i18n="meta-val-limit">先着順（定員に達し次第締切）</div>
+        </div>
+        <div class="price-meta-item" style="background: #fff8e1;">
+          <div class="p-label">必要なもの</div>
+          <div class="p-value">ノートPC / Googleアカウント / 筆記用具</div>
         </div>
       </div>
 
@@ -2422,7 +2510,7 @@
       </div>
 
       <ul class="price-bullets">
-        <li data-i18n="bullet-p-1">ご自身のPCをご持参いただく実践ワークアウト形式です。</li>
+        <li data-i18n="bullet-p-1">【持ち物】ノートPC、Googleアカウント（必須）、筆記用具（※ご自身のPCをご持参いただく実践ワークアウト形式です）</li>
         <li data-i18n="bullet-p-2">1回単位での申込が可能。ご都合の良い日時を選んでピンポイント受講OK。</li>
         <li data-i18n="bullet-p-3">法人複数名での参加や全講座の一括申込については別途ご相談ください。</li>
       </ul>
@@ -2448,22 +2536,7 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="wrap" id="contact">
-    <div class="apply-section">
-      <h3 data-i18n="apply-title">お問い合わせ</h3>
-      <p data-i18n="apply-desc">
-        講座に関するご質問等がありましたら、こちらの専用メールアドレスにて承っております。<br>
-        メールアドレスをクリック（またはタップ）していただくと、メールソフトが自動的に起動します。
-      </p>
-      <a href="mailto:ryukyukaisei@gmail.com?subject=琉球大学公開講座についてのお問い合わせ&body=【お名前】%0D%0A【ご連絡先】%0D%0A【お問い合わせ内容】%0D%0A%0D%0A（上記をご記入の上送信してください。）"
-        class="email-link">
-        <img src="https://img.icons8.com/fluent-systems-filled/96/new-post.png" alt="Mail Icon">
-        ryukyukaisei@gmail.com
-      </a>
-      <p class="email-note" data-i18n="apply-note">※お急ぎの場合は件名に「急ぎ」とご記入ください。折り返しご案内差し上げます。</p>
-    </div>
-  </section>
+
 
   <section class="faq" id="faq">
     <h2 data-i18n="faq-title">よくある質問</h2>
@@ -2477,8 +2550,8 @@
           data-i18n="cta-band-btn">今すぐ申し込む</button></div>
     </div>
     <div class="right">
-      <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=500&q=80"
-        alt="Consultation">
+      <img src="fkN-DSCF6827_TP_V.jpg.webp"
+        alt="Lecture Workspace" class="apply-img" style="border-radius: 12px;">
     </div>
   </section>
 
@@ -2511,7 +2584,7 @@
     // Multi-language translation database
     const translations = {
       ja: {
-        "header-brand-univ": "琉球大学",
+        "header-brand-univ": "<span style=\"white-space: nowrap;\">国立大学法人</span>　<span style=\"white-space: nowrap;\">琉球大学</span>",
         "nav-why": "なぜ今AIか",
         "nav-courses": "講座の内容",
         "nav-strengths": "強み",
@@ -2520,77 +2593,83 @@
         "nav-faq": "FAQ",
         "cta-btn": "今すぐ申し込む",
         "hero-eyebrow": "ビジネスパーソン・経営者のための",
-        "hero-title-1": "仕事が終わらないのは、",
-        "hero-title-2": "AIを知らないから。",
+        "hero-title-1": "あなただけの",
+        "hero-title-2": "<span style=\"color: var(--yellow); font-size: 2.2em; font-weight: 900; text-shadow: 0 4px 30px rgba(254, 191, 28, 0.4);\"><ruby>A<rt style=\"font-weight: 900; font-size: 0.2em; color: var(--yellow); text-align: center;\">あ</rt></ruby><ruby>I<rt style=\"font-weight: 900; font-size: 0.2em; color: var(--yellow); text-align: center;\">い</rt></ruby>棒</span><br>手に入れよう",
+        "floating-text": "あなただけの<br><span style=\"color: var(--yellow); font-size: 2.0em; font-weight: 900;\"><ruby>A<rt style=\"font-weight: 900; font-size: 0.2em; color: var(--yellow); text-align: center;\">あ</rt></ruby><ruby>I<rt style=\"font-weight: 900; font-size: 0.2em; color: var(--yellow); text-align: center;\">い</rt></ruby>棒</span><br>手に入れよう",
         "hero-subtitle": "琉球大学 公開講座",
-        "hero-lead-text": "「人手が足りない」と嘆く前に、AIという信頼できる副操縦士を。全10回の厳選されたステップで、あなたの実務を「AIネイティブ」へ即日アップデートします。",
+        "hero-lead-text": "「時間がない」と悩む前に、<br class=\"sp-br\">あなただけの「相棒（AI棒）」を。<br>全10回の厳選されたステップで、<br>あなたの実務を「AIネイティブ」へ<br class=\"sp-br\">即日アップデートします。",
         "badge-1-h": "初心者歓迎",
         "badge-1-p": "基礎から丁寧に",
         "badge-2-h": "仕事に直結",
         "badge-2-p": "明日から使える力",
-        "badge-3-h": "リスク管理",
-        "badge-3-p": "正しい活用知識",
-        "badge-4-h": "対面少人数制",
-        "badge-4-p": "高い学習効果",
+        "badge-3-h": "単発受講OK",
+        "badge-3-p": "好きな回だけ参加",
+        "badge-4-h": "オンライン受講可",
+        "badge-4-p": "どこからでも参加",
         "hero-cta-primary": "今すぐ申し込む",
         "hero-cta-secondary": "講座の内容を見る",
         "collage-tag": "AI活用で<br>生産性革命",
         "why-eyebrow": "Why AI Now?",
         "why-title": "なぜ今、すべての社会人にAIが必要なのか",
-        "sim-label": "AI導入効果予測シミュレーター (2026-2030)",
-        "chart-source": "※出典：各種公的統計およびAI導入効果に関する研究レポートを基に算出（推計値）",
+        "sim-label": "データに基づく変化",
+        "chart-source": "※出典：Microsoft Work Trend Index 2023",
         "sim-no-ai": "現状維持",
         "sim-with-ai": "AI導入後 ✨",
         "metric-overtime-label": "平均残業時間（月）",
         "metric-speed-label": "平均業務処理能力",
         "unit-hours": "時間",
         "unit-times": "倍",
-        "chart-y-max": "高効率",
-        "chart-y-avg": "平均",
-        "chart-y-low": "低効率",
+        "chart-y-prod-max": "4.0倍",
+        "chart-y-prod-avg": "2.5倍",
+        "chart-y-prod-low": "1.0倍",
+        "chart-y-over-max": "50h",
+        "chart-y-over-avg": "30h",
+        "chart-y-over-low": "10h",
+        "chart-x-1": "全体平均",
+        "chart-x-2": "文書作成",
+        "chart-x-3": "メール",
+        "chart-x-4": "情報検索",
+        "chart-x-5": "会議要約",
         "legend-productivity": "生産性（処理能力）",
         "legend-overtime": "平均残業時間",
-        "why-item-1-title": "01. 労働人口減少への唯一にして最大の対抗策",
-        "why-item-1-desc": "激化する人手不足を前に、採用コストの上昇は止まりません。新人を雇用するのではなく、既存の各チームメンバーが「デジタルAI副操縦士」を味方につけることが、安定経営と組織の持続可能性を確固たるものにします。",
-        "why-item-2-title": "02. 創出される圧倒的な知的生産力",
-        "why-item-2-desc": "実務レベルでAIを使いこなせる人は、非活用者と比較して数倍～十数倍のスピードで高度なアウトプットを引き出します。この能力格差はもはや残業時間やマンパワーでカバーできる範疇を超えています。",
-        "why-item-3-title": "03. 組織と個人の市場価値を限界突破させる",
-        "why-item-3-desc": "定型事務や時間のかかる下調べ、構成検討をAIに役割分担し、人間はより戦略的で高次元な「意思決定」や「地域課題解決」に特化する。この役割分担の最適化こそが、最大の価値を生み出します。",
+        "why-item-1-title": "01. 労働人口減少対策に対する大きな一歩",
+        "why-item-1-desc": "人手不足が続く中、新しい人材の採用にかかるコストや負担は年々大きくなっています。現状の労働力でも対応できる力をもたらす、既存の各チームメンバーが「<strong style=\"color: var(--yellow);\">デジタルAI副操縦士</strong>」を味方につけることが、安定経営と組織の持続可能性を確固たるものにします。",
+        "why-item-2-title": "02. 創出される「298万人分」の労働力",
+        "why-item-2-desc": "2030年には日本全体で644万人の労働力が不足すると予測されています。しかし、AIなどの技術革新による業務代替・省人化によって、そのうち約298万人分の労働需要をカバーできると推計されています。AIは既存のマンパワーを凌駕する生産能力をもたらすため、人手不足による<strong style=\"color: var(--yellow);\">残業時間の急激な増加</strong>を受け入れる<strong style=\"color: var(--yellow);\">必要はない</strong>のです。",
+        "why-item-3-title": "03. 組織と個人の市場価値を引き出す",
+        "why-item-3-desc": "AIの基礎的な内容から実践までを段階的に学習できるため、初心者でも無理なくスキルを身につけられます。ここで得た知識と経験は、<strong style=\"color: var(--yellow);\">将来的</strong>なあらゆる業務で<strong style=\"color: var(--yellow);\">必ず生かしていく</strong>ことができます。",
         "producer-badge": "琉球大学公開講座 プロデューサー",
         "producer-name": "大森 洋介",
         "producer-title": "特命准教授",
-        "producer-heading": "「最先端を、誰もが直感的に動かせる感動」をすべての方へ。",
-        "producer-text": "情報技術の進歩は極めて早く、「置いていかれるのではないか」という漠然とした不安を抱える方は少なくありません。しかし実のところ、現代のITは専門技術ではなく、私たちの「言葉」や「想像力」で動かせる直感的な道具へと進化しています。つまり、最も強力な変革ツールが、今や誰でも使える状態で目の前に整っています。<br><br>本講座では、体系的な視点をベースに、明日からの実務や地域課題にすぐ実装できる実践ワークを多数用意しました。対面だからこそ、人との繋がりを大切にしながら、つまずかずに「遊び」として体験できる最適なカリキュラムです。ぜひ一緒に体験しましょう。",
+        "producer-heading": "最先端AIを、誰もが直感的に。",
+        "producer-text": "情報技術の進歩は極めて早く、「置いていかれるのではないか」という漠然とした不安を抱える方は少なくありません。しかし実のところ、現代のITは専門技術ではなく、私たちの「言葉」や「想像力」で動かせる直感的な道具へと進化しています。つまり、最も強力な変革ツールが、今や誰でも使える状態で目の前に整っています。<br><br>本講座では、体系的な視点をベースに、明日からの実務や地域課題につながる実践ワークを多数用意しました。対面だからこそ、人との繋がりを大切にしながら、つまずかずに楽しみながら体験できる最適なカリキュラムです。ぜひ一緒に体験しましょう。",
         "producer-bio": "<strong>【略歴／Profile】</strong><br>琉球大学研究共創機構 特命准教授。地域連携機構等においてデジタル変革（DX）、ビジネスAI、デジタルリテラシー、IT教育を専門とし、沖縄県内外のSTEM教育活動や企業への実務AI・デジタルマーケティング教育の支援、および科学教育推進プロジェクトを多数兼任する。",
         "courses-title": "講座の内容",
         "courses-sub": "（全10講座・各回独立構成）",
-        "skills-title": "この講座で身につくこと",
-        "skill-1-h": "AIプロンプト設計力（対話と壁打ち）",
-        "skill-1-p": "ChatGPTやClaudeをはじめ、AIとの最適な「言語対話」により高精度な解答を導くプロンプト技法が身につきます。",
-        "skill-2-h": "実務文書＆議事録のスピード生成",
-        "skill-2-p": "長文資料からの重要な情報の抽出、構造化された会議要約、取引先向けビジネス文書の構築をほぼ一瞬で完了できます。",
-        "skill-3-h": "データ分析とグラフ視覚化の自動化",
-        "skill-3-p": "Excel作業の効率化はもちろん、膨大な数値データをAIに読み込ませ、傾向分析や最適な分析グラフを指示・自動作成する手法を体得。",
-        "skill-4-h": "セキュリティ・ハルシネーション対策",
-        "skill-4-p": "ビジネスで使用する際のデータプライバシー設定、嘘の情報（ハルシネーション）を見破る安全ガイドラインを習得します。",
-        "skills-note-text": "※各回はそれぞれ完結した実戦形式です。ご自身の興味や強化したい領域に合わせて1回だけの単発受講も大歓迎です。",
+        "courses-pdf-btn": "<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"></path><polyline points=\"15 3 21 3 21 9\"></polyline><line x1=\"10\" y1=\"14\" x2=\"21\" y2=\"3\"></line></svg> 講座内容の詳細をWebで開く",
+        "skills-title": "特におすすめの講座",
+        "skill-1-h": "06. Geminiで考える ー 発想・比較・壁打ちの基礎",
+        "skill-1-p": "新しいアイデアの発想や複数案の比較など、思考のパートナーとしてAIを活用する手法。",
+        "skill-3-h": "08. NotebookLM実践 ー 複数資料を整理し、理解を深める",
+        "skill-3-p": "複数のドキュメントを組み合わせて整理し、より深く情報を理解するための実践的な使い方。",
+        "skills-note-text": "各回はそれぞれ完結した実戦形式のため、ご自身の興味や課題に合わせて<strong>1回だけの単発受講も大歓迎</strong>です！<br><br>もちろん、全10回を<strong>一貫して受講いただくことで、AIスキルを体系的に網羅し、さらに圧倒的な業務効率化を実現</strong>できます。<br><br>パソコン操作に自信がない初心者の方から、本格的に業務DXを推進したい方まで、幅広い方のご参加をお待ちしております。",
         "strengths-title": "琉球大学公開講座ならではの強み",
-        "strength-1-h": "実務密着型カリキュラム",
-        "strength-1-p": "難しい理論は後回し。明日からの仕事をラクにする具体例とワークを徹底追求。",
-        "strength-2-h": "手厚い少人数・対面講義",
-        "strength-2-p": "講師とプロットを共有する対面講義。わからない点をその場ですぐに直接解決。",
-        "strength-3-h": "段階的な体系的ステップ",
-        "strength-3-p": "初心者から安全かつ確実に高度な活用領域へとステップアップできる親切構成。",
-        "strength-4-h": "信頼の大学公開講座",
-        "strength-4-p": "琉球大学の信頼ある研究・地域推進活動として、中立、安全、高度な学習を担保。",
+        "strength-1-h": "「明日から使える」実践ワーク",
+        "strength-1-p": "難しい理論より「体験」を重視。その場でPCを操作し、実務直結のAIスキルを体で覚えます。",
+        "strength-2-h": "つまずかない手厚いサポート",
+        "strength-2-p": "パソコン操作に自信がなくても大丈夫。対面とオンラインの両方で、スタッフが丁寧にフォローします。",
+        "strength-3-h": "無理なく学べる段階ステップ",
+        "strength-3-p": "超初心者レベルからスタートし、全10回を通して自然にAIネイティブへと成長できるカリキュラムです。",
+        "strength-4-h": "学生発信による新鮮な視点",
+        "strength-4-p": "琉大生チームが企画・運営。柔軟なAI活用術に触れながら、世代を超えた学び合いが生まれます。",
         "testi-title": "企画した学生の声",
         "testi-sub": "本講座をプロデュースした琉球大学の学生チームからのメッセージです",
-        "review-1-text": "「社会人の皆様が現場で直面する課題を、どうすればAIで解決できるかを学生チームで徹底的に議論しました。皆さんの業務が少しでも楽になるよう、実践的な内容にこだわっています！」",
+        "review-1-text": "「AIを活用する利点のひとつは、その利便性と、より多くの情報にたどり着けるよう導いてくれる点にあると思います。私の仕事にとっても非常に役立っています。」",
         "review-1-name": "琉球大学 学生チーム",
-        "review-1-meta": "企画・運営リーダー / 3年",
-        "review-2-text": "「私たちが普段から活用しているAIの便利さを、社会人の方にも届けたいという思いからスタートしました。AIに不慣れな方でも安心して参加できるよう、私たちが全力でサポートします！」",
+        "review-1-meta": "国際教育センター / 3年",
+        "review-2-text": "「AIを活用してアルバイトのシフト管理システムを開発したことで、スタッフの出勤日をシステム上で簡単に把握できるようになりました。これまでのように一人ひとりに希望を聞いて回る手間が省け、業務効率が大幅に向上しました。」",
         "review-2-name": "琉球大学 学生チーム",
-        "review-2-meta": "サポート統括 / 4年",
+        "review-2-meta": "教育学部 / 4年生",
         "review-3-text": "「私も、AIビギナーだったのですが、AIの使い方を学んで日常が充実しています。最近はアプリを開発するなど、より発展的な段階に楽しんで取り組めています！」",
         "review-3-name": "琉球大学 学生チーム",
         "review-3-meta": "国際地域創造学部 / 1年",
@@ -2603,10 +2682,10 @@
         "meta-label-target": "対象",
         "meta-val-target": "ビジネスパーソン・経営者・一般の方",
         "meta-label-limit": "定員",
-        "meta-val-limit": "各回 少人数限定（先着順）",
+        "meta-val-limit": "先着順（定員に達し次第締切）",
         "fee-title-label": "1回あたり特別受講料",
         "payment-info-text": "※お支払いは当日または事前オンライン決済となります。",
-        "bullet-p-1": "ご自身のPCをご持参いただく実践ワークアウト形式です。",
+        "bullet-p-1": "【持ち物】ノートPC、Googleアカウント（必須）、筆記用具（※ご自身のPCをご持参いただく実践ワークアウト形式です）",
         "bullet-p-2": "1回単位での申込が可能。ご都合の良い日時を選んでピンポイント受講OK。",
         "bullet-p-3": "法人複数名での参加や全講座の一括申込については別途ご相談ください。",
         "venue-tag": "会場・アクセス",
@@ -2623,7 +2702,7 @@
         "price-tag-2": "実機ワークあり"
       },
       en: {
-        "header-brand-univ": "Ryukyu University",
+        "header-brand-univ": "National University Corporation, University of the Ryukyus",
         "nav-why": "Why AI",
         "nav-courses": "Curriculum",
         "nav-strengths": "Strengths",
@@ -2632,33 +2711,43 @@
         "nav-faq": "FAQ",
         "cta-btn": "Apply Now",
         "hero-eyebrow": "For Professionals & Executives",
-        "hero-title-1": "Lagging behind in work?",
-        "hero-title-2": "It's because you don't know AI.",
+        "hero-title-1": "Why not get your own",
+        "hero-title-2": "<span style=\"color: var(--yellow); font-size: 1.6em; font-weight: 900; text-shadow: 0 4px 30px rgba(254, 191, 28, 0.4);\">AI Wand</span><br>today?",
+        "floating-text": "Why not get your own<br><span style=\"color: var(--yellow); font-size: 1.5em; font-weight: 900;\">AI Wand</span><br>today?",
         "hero-subtitle": "Ryukyu University Public Course",
-        "hero-lead-text": "Before giving up on labor shortages, welcome AI as your trusty co-pilot. Instantly upgrade your operations to AI-Native with our structured 10-session curriculum.",
+        "hero-lead-text": "Before worrying about not having enough time, get your own 'AI Wand' (your trusty partner). Upgrade your operations to 'AI-Native' through 10 curated steps.",
         "badge-1-h": "Beginner Friendly",
         "badge-1-p": "Step-by-step guidance",
         "badge-2-h": "Business Oriented",
         "badge-2-p": "Applicable tomorrow",
-        "badge-3-h": "Risk Management",
-        "badge-3-p": "Safe & Secure practices",
-        "badge-4-h": "Small In-Person Classes",
-        "badge-4-p": "High learning efficiency",
+        "badge-3-h": "Single Sessions OK",
+        "badge-3-p": "Join what you need",
+        "badge-4-h": "Online OK",
+        "badge-4-p": "Join from anywhere",
         "hero-cta-primary": "Enroll Now",
         "hero-cta-secondary": "View Curriculum",
         "collage-tag": "Unleash AI<br>Productivity",
         "why-eyebrow": "Why AI Now?",
         "why-title": "Why Every Professional Needs AI Literacy Today",
-        "sim-label": "AI Impact Forecast Simulator (2026-2030)",
-        "sim-no-ai": "Status Quo",
+        "sim-label": "AI Productivity Boost by Task (Measured Data)",
+        "chart-source": "Source: Microsoft Work Trend Index 2023",
+        "sim-no-ai": "Current State",
         "sim-with-ai": "With AI ✨",
         "metric-overtime-label": "Monthly Overtime",
         "metric-speed-label": "Work Processing Capacity",
         "unit-hours": "Hours",
         "unit-times": "x Boost",
-        "chart-y-max": "High",
-        "chart-y-avg": "Avg",
-        "chart-y-low": "Low",
+        "chart-y-prod-max": "4.0x",
+        "chart-y-prod-avg": "2.5x",
+        "chart-y-prod-low": "1.0x",
+        "chart-y-over-max": "50h",
+        "chart-y-over-avg": "30h",
+        "chart-y-over-low": "10h",
+        "chart-x-1": "Overall",
+        "chart-x-2": "Writing",
+        "chart-x-3": "Emails",
+        "chart-x-4": "Search",
+        "chart-x-5": "Meetings",
         "legend-productivity": "Productivity (Capacity)",
         "legend-overtime": "Average Overtime Hours",
         "why-item-1-title": "01. The Best Solution for Labor Shortages",
@@ -2675,6 +2764,7 @@
         "producer-bio": "<strong>【Biography／Profile】</strong><br>Special Associate Professor at the Research Co-Creation Organization, Ryukyu University. Specializes in Digital Transformation (DX), Business AI implementation, digital literacy, and STEM education, actively supporting regional businesses and regional tech development initiatives.",
         "courses-title": "Course Curriculum",
         "courses-sub": "(10 Independent Classes)",
+        "courses-pdf-btn": "<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"></path><polyline points=\"15 3 21 3 21 9\"></polyline><line x1=\"10\" y1=\"14\" x2=\"21\" y2=\"3\"></line></svg> Open Curriculum on Web",
         "skills-title": "Skills You Will Master",
         "skill-1-h": "AI Prompt Engineering",
         "skill-1-p": "Learn effective structured prompt techniques to draw precise, rich responses from tools like ChatGPT and Claude.",
@@ -2684,24 +2774,24 @@
         "skill-3-p": "Feed raw data into AI to generate analytical insights, identify trends, and create dynamic graphs without complex Excel coding.",
         "skill-4-h": "Security & Hallucination Mitigation",
         "skill-4-p": "Understand essential data privacy protocols, prevent leaks, and master validation to identify incorrect AI assertions.",
-        "skills-note-text": "* Each class is completely independent. Feel free to choose and attend only the single sessions that align with your requirements.",
+        "skills-note-text": "Each session is a completely independent practical format, so <strong>attending even a single session tailored to your interests is highly welcomed!</strong><br><br>Of course, by <strong>consistently taking all 10 sessions, you will comprehensively master AI skills and achieve overwhelming operational efficiency.</strong><br><br>We look forward to the participation of a wide range of people, from beginners to those who want to seriously promote business DX.",
         "strengths-title": "Why Choose Ryukyu University Public Lectures?",
         "strength-1-h": "Practical Workflows",
-        "strength-1-p": "We skip dry theories to focus entirely on actionable real-world examples and interactive exercises.",
-        "strength-2-h": "Small Group Support",
-        "strength-2-p": "With in-person coaching, you receive instant guidance on your own PC whenever you get stuck.",
+        "strength-1-p": "We skip dry theories to focus entirely on actionable real-world examples and interactive exercises, allowing you to learn by experiencing AI firsthand.",
+        "strength-2-h": "In-Person & Online Hybrid",
+        "strength-2-p": "In addition to in-person classes, online participation is fully supported. Join flexibly according to your lifestyle.",
         "strength-3-h": "Well-Structured Steps",
         "strength-3-p": "A meticulously planned path designed to lead absolute beginners toward highly advanced use cases.",
-        "strength-4-h": "Credible Public Institution",
-        "strength-4-p": "Ensures academic integrity, strict security protocols, and unbiased, reliable training methodologies.",
+        "strength-4-h": "Student-Led & Intergenerational Exchange",
+        "strength-4-p": "Initiated by students, this program fosters interaction across different generations, offering fresh perspectives and new discoveries.",
         "testi-title": "Voices from the Student Planners",
         "testi-sub": "Messages from the University of the Ryukyus student team who produced this course.",
-        "review-1-text": "『We thoroughly discussed how AI can solve the actual challenges working professionals face. We focused on practical content so your daily tasks become easier!』",
+        "review-1-text": "“I think one of the good points of using AI is that it is convenient and can guide me to find more information. It is also very useful for my work.”",
         "review-1-name": "Ryukyu Univ. Student Team",
-        "review-1-meta": "Planning Leader / Junior",
-        "review-2-text": "『We started this initiative because we wanted to share the convenience of AI that we use daily with professionals. We will do our best to support everyone, even those unfamiliar with AI!』",
+        "review-1-meta": "Global Education Center / Junior",
+        "review-2-text": "“By using AI to develop a shift management system for part-time jobs, we can now easily track staff attendance online. It saves us the trouble of asking everyone individually for their availability, greatly improving operational efficiency.”",
         "review-2-name": "Ryukyu Univ. Student Team",
-        "review-2-meta": "Support Manager / Senior",
+        "review-2-meta": "Faculty of Education / Senior",
         "review-3-text": "『I was also an AI beginner, but learning how to use AI has enriched my daily life. Recently, I've even been developing apps and enjoying taking on more advanced stages!』",
         "review-3-name": "Ryukyu Univ. Student Team",
         "review-3-meta": "Faculty of Global and Regional Studies / Freshman",
@@ -2709,15 +2799,16 @@
         "pricing-h-text": "Fees & Course Format",
         "meta-label-format": "Format",
         "meta-val-format": "In-Person Lecture & Practice",
+        "meta-val-format": "In-Person Lecture & Online Attendance",
         "meta-label-time": "Duration",
         "meta-val-time": "60 Minutes per Session",
         "meta-label-target": "Target",
         "meta-val-target": "Business Professionals, Executives & Locals",
         "meta-label-limit": "Capacity",
-        "meta-val-limit": "Limited seats per session (First-come basis)",
+        "meta-val-limit": "First-come, first-served basis",
         "fee-title-label": "Special Enrollment Fee per Session",
         "payment-info-text": "* Payments can be made via convenient on-site or pre-registration online payment.",
-        "bullet-p-1": "Practical workout format. Please bring your own notebook PC.",
+        "bullet-p-1": "[Required items] Notebook PC, Google Account, Writing utensils. (Practical workout format)",
         "bullet-p-2": "Fully flexible single-session enrollment. Register only for your chosen days.",
         "bullet-p-3": "For group registrations or corporate packages, please contact our support office.",
         "venue-tag": "Venue & Map",
@@ -2738,52 +2829,55 @@
     // System Language State
     let currentLang = 'ja';
 
-    // Simulation data (No AI overtime INCREASES over the years now)
     const chartData = {
-      noAi: { overtime: [45, 50, 55, 62, 70], speed: [1.0, 1.0, 1.0, 1.0, 1.0], overallOvertime: 70, overallSpeed: 1.0 },
-      withAi: { overtime: [45, 45, 45, 45, 45], speed: [1.2, 1.8, 2.5, 3.5, 4.2], overallOvertime: 45, overallSpeed: 4.2 }
+      noAi: { shortage: [384, 505, 644], overallShortage: 644 },
+      withAi: { shortage: [384, 505, 346], overallShortage: 346 }
     };
     let isAiActive = false;
 
     // 10 classes data
     const coursesData = {
       ja: [
-        { num: "01", title: "AIの基本と対話のコツ", desc: "ChatGPT等の仕組みを正しく理解し、思い通りのアウトプットを得る基本を学びます。", dates: ["6/3(水)", "13:00", "6/6(土)", "10:00"] },
-        { num: "02", title: "長文の要約と情報整理", desc: "大量のドキュメントや議事録を構造化し、要点をリストアップする実務スキル。", dates: ["6/10(水)", "13:00", "6/13(土)", "10:00"] },
-        { num: "03", title: "ビジネス文書・メール作成", desc: "シチュエーションに応じた適切な挨拶文、提案書、プレスリリース作成の効率化。", dates: ["6/17(水)", "13:00", "6/20(土)", "10:00"] },
-        { num: "04", title: "アイデア出しと企画の壁打ち", desc: "新規事業やイベント、マーケティング施策のブレスト役としてAIを使い倒す手法。", dates: ["6/24(水)", "13:00", "6/27(土)", "10:00"] },
-        { num: "05", title: "データ分析と視覚化の自動化", desc: "数値データをAIに読み込ませ、傾向の分析や適切なグラフ生成を指示する方法。", dates: ["7/1(水)", "13:00", "7/4(土)", "10:00"] },
-        { num: "06", title: "英語対応と海外リサーチ", desc: "高度な翻訳はもちろん、海外の最新文献やトレンドを効率よく解読・収集する技。", dates: ["7/8(水)", "13:00", "7/11(土)", "10:00"] },
-        { num: "07", title: "プログラミング不要の業務効率化", desc: "Excelマクロや自動化スクリプトの作成、ツール連携をAIのコード生成で実現。", dates: ["7/15(水)", "13:00", "7/18(土)", "10:00"] },
-        { num: "08", title: "プレゼン資料の構成案作成", desc: "聞き手に響くスライドのストーリー構成や、各ページの骨子・テキスト案の構築。", dates: ["7/22(水)", "13:00", "7/25(土)", "10:00"] },
-        { num: "09", title: "AI利用のセキュリティとリスク", desc: "機密情報の漏洩を防ぐ設定や、著作権、ハルシネーション（嘘）への対策知識。", dates: ["7/29(水)", "13:00", "8/1(土)", "10:00"] },
-        { num: "10", title: "社内AI導入とチーム活用", desc: "個人利用に留まらず、組織全体で効率よく安全にAIを使いこなすための環境づくり。", dates: ["8/5(水)", "13:00", "8/8(土)", "10:00"] }
+        { num: "01", title: "なぜ今AIを学ぶのか ― 仕事・学び・社会はどう変わるのか", desc: "AIの仕組みを正しく理解し、これからの社会でどうAIを活用していくかの基本を学びます。", dates: ["6/27", "9:00-10:00", "7/4", "9:00-10:00"] },
+        { num: "02", title: "はじめてのGemini ― AIと会話してみる90分", desc: "AIとの対話の基本を学び、まずはGeminiを使って実際に会話を体験してみる90分です。", dates: ["6/27", "10:10-11:10", "7/4", "10:10-11:10"] },
+        { num: "03", title: "Geminiで壁打ちする ー 聞き方を変えると答え方が変わる", desc: "質問の仕方を変えることで、より深い洞察やアイデアを引き出す壁打ちの手法を習得します。", dates: ["6/27", "11:20-12:20", "7/4", "11:20-12:20"] },
+        { num: "04", title: "プロンプトとLLMの基本 ー AIがそれっぽく答える理由を知る", desc: "LLM（大規模言語モデル）の仕組みを知り、AIがもっともらしい答えを出す理由とプロンプトの基本を学びます。", dates: ["6/27", "12:30-13:30", "7/4", "12:30-13:30"] },
+        { num: "05", title: "Geminiで整える ー 要約・整理・言い換えの基礎", desc: "長文の要約や文章の言い換えなど、雑多な情報をGeminiで綺麗に整理する基礎スキルを身につけます。", dates: ["6/27", "13:40-14:40", "7/4", "13:40-14:40"] },
+        { num: "06", title: "Geminiで考える ー 発想・比較・壁打ちの基礎", desc: "新しいアイデアの発想や複数案の比較など、思考のパートナーとしてGeminiを活用する手法。", dates: ["6/28", "9:00-10:00", "7/5", "9:00-10:00"] },
+        { num: "07", title: "NotebookLM入門 ー 資料をもとに考えるAIを使う", desc: "独自の資料を読み込ませて、その内容をもとに質問や考察ができるNotebookLMの基本操作を学びます。", dates: ["6/28", "10:10-11:10", "7/5", "10:10-11:10"] },
+        { num: "08", title: "NotebookLM実践 ー 複数資料を整理し、理解を深める", desc: "複数のドキュメントを組み合わせて整理し、より深く情報を理解するための実践的な使い方。", dates: ["6/28", "11:20-12:20", "7/5", "11:20-12:20"] },
+        { num: "09", title: "AIを安全に使う ー 誤情報・著作権・個人情報", desc: "AIを利用する上での誤情報の見極め、著作権の扱いや個人情報保護に関する必須のセキュリティ知識。", dates: ["6/28", "12:30-13:30", "7/5", "12:30-13:30"] },
+        { num: "10", title: "GeminiとNotebookLMで自分のテーマを整理する", desc: "学んだツールを組み合わせ、参加者ご自身の業務や課題に合わせてテーマを整理し、実践的なアウトプットを作成します。", dates: ["6/28", "13:40-14:40", "7/5", "13:40-14:40"] }
       ],
       en: [
-        { num: "01", title: "AI Basics & Prompting Tips", desc: "Master the structure of LLMs like ChatGPT and learn best dialogue frameworks to retrieve desired outputs.", dates: ["Jun 3 (Wed)", "13:00", "Jun 6 (Sat)", "10:00"] },
-        { num: "02", title: "Summarization & Info Synthesis", desc: "Structure high-volume documents and draft dynamic meeting summaries to extract key action items.", dates: ["Jun 10 (Wed)", "13:00", "Jun 13 (Sat)", "10:00"] },
-        { num: "03", title: "Business Writing & Email Automation", desc: "Accelerate creation of professional pitches, proposals, press releases, and structured correspondence.", dates: ["Jun 17 (Wed)", "13:00", "Jun 20 (Sat)", "10:00"] },
-        { num: "04", title: "Brainstorming & Strategic Sparring", desc: "Use AI as an active conversational partner to develop marketing campaigns and new business models.", dates: ["Jun 24 (Wed)", "13:00", "Jun 27 (Sat)", "10:00"] },
-        { num: "05", title: "Data Analysis & Visual Dashboards", desc: "Uncover insights in spreadsheets and instruct AI to construct clean analytical graphs autonomously.", dates: ["Jul 1 (Wed)", "13:00", "Jul 4 (Sat)", "10:00"] },
-        { num: "06", title: "English & Global Market Research", desc: "Translate high-context papers and efficiently analyze emerging global industry trends.", dates: ["Jul 8 (Wed)", "13:00", "Jul 11 (Sat)", "10:00"] },
-        { num: "07", title: "No-Code Workflow Efficiency", desc: "Generate functional macro codes and automate routines using direct code generation assistants.", dates: ["Jul 15 (Wed)", "13:00", "Jul 18 (Sat)", "10:00"] },
-        { num: "08", title: "Structuring Persuasive Presentations", desc: "Draft high-converting presentation structures, slide outlines, and verbal narratives with AI.", dates: ["Jul 22 (Wed)", "13:00", "Jul 25 (Sat)", "10:00"] },
-        { num: "09", title: "AI Security & Privacy Risk mitigation", desc: "Learn essential data opt-out settings, copyright boundaries, and hallucination safety check protocols.", dates: ["Jul 29 (Wed)", "13:00", "Aug 1 (Sat)", "10:00"] },
-        { num: "10", title: "AI Integration in Organizations", desc: "Transform individual gains into institutional habits by setting team standards and collaborative workflows.", dates: ["Aug 5 (Wed)", "13:00", "Aug 8 (Sat)", "10:00"] }
+        { num: "01", title: "Why Learn AI Now? - How Work, Learning, and Society Will Change", desc: "Understand how AI works and learn the basics of how to leverage it in our changing society.", dates: ["Jun 27", "9:00-10:00", "Jul 4", "9:00-10:00"] },
+        { num: "02", title: "Intro to Gemini - A 90-minute Conversation with AI", desc: "Learn the basics of conversing with AI and experience your first interactive session with Gemini.", dates: ["Jun 27", "10:10-11:10", "Jul 4", "10:10-11:10"] },
+        { num: "03", title: "Brainstorming with Gemini - How Asking Differently Changes the Answer", desc: "Master the art of 'sounding board' conversations to draw out deeper insights by changing how you ask.", dates: ["Jun 27", "11:20-12:20", "Jul 4", "11:20-12:20"] },
+        { num: "04", title: "Basics of Prompts & LLMs - Knowing Why AI Answers the Way It Does", desc: "Understand the mechanics of Large Language Models and the basic rules of prompt engineering.", dates: ["Jun 27", "12:30-13:30", "Jul 4", "12:30-13:30"] },
+        { num: "05", title: "Organizing with Gemini - Basics of Summarizing and Paraphrasing", desc: "Acquire basic skills to summarize long texts, paraphrase, and neatly organize diverse information using Gemini.", dates: ["Jun 27", "13:40-14:40", "Jul 4", "13:40-14:40"] },
+        { num: "06", title: "Thinking with Gemini - Basics of Ideation and Comparison", desc: "Learn how to use Gemini as a thinking partner for generating new ideas and comparing multiple options.", dates: ["Jun 28", "9:00-10:00", "Jul 5", "9:00-10:00"] },
+        { num: "07", title: "Intro to NotebookLM - Using AI to Think Based on Materials", desc: "Learn the basic operations of NotebookLM to analyze and ask questions based on your own uploaded materials.", dates: ["Jun 28", "10:10-11:10", "Jul 5", "10:10-11:10"] },
+        { num: "08", title: "NotebookLM in Practice - Organizing Multiple Materials", desc: "Practical applications of NotebookLM: combining and organizing multiple documents for deeper understanding.", dates: ["Jun 28", "11:20-12:20", "Jul 5", "11:20-12:20"] },
+        { num: "09", title: "Using AI Safely - Misinformation, Copyrights, and Privacy", desc: "Essential security knowledge regarding misinformation, copyright boundaries, and personal data protection.", dates: ["Jun 28", "12:30-13:30", "Jul 5", "12:30-13:30"] },
+        { num: "10", title: "Organizing Your Themes with Gemini and NotebookLM", desc: "Combine the tools learned to organize your own professional themes and create practical outputs.", dates: ["Jun 28", "13:40-14:40", "Jul 5", "13:40-14:40"] }
       ]
     };
 
     // FAQ Database
     const faqData = {
       ja: [
-        { q: "パソコンの操作に自信がありませんが受講できますか？", a: "はい、大歓迎です。一般的な文字入力やブラウザによる検索操作ができれば、AIの利用に専門知識は不要です。少人数の対面形式ですので、安心してお気軽にご参加ください。" },
-        { q: "必要な持ち物はありますか？", a: "普段お使いのノートパソコン（Wi-Fi接続が可能な端末）と、筆記用具をご持参ください。講義内で実際にブラウザ上でお手元のPCを操作しながら受講していただきます。" },
+        { q: "パソコンの操作に自信がありませんが受講できますか？", a: "はい、大歓迎です。一般的な文字入力やブラウザによる検索操作ができれば、AIの利用に専門知識は不要です。対面だけでなくオンライン受講でもしっかりサポートしますので、安心してお気軽にご参加ください。" },
+        { q: "必要な持ち物はありますか？", a: "【持ち物】<br>①ノートパソコン（Wi-Fi接続が可能な端末）<br>②Googleアカウント（必須）<br>③筆記用具<br><br>講義内で実際にブラウザ上でお手元のPCを操作しながら受講していただきます。" },
+        { q: "Googleアカウントの作成は必須でしょうか？", a: "はい、参加の場合は事前にGoogleアカウントの作成をお願いしています。" },
+        { q: "AIツールの課金は必要でしょうか？", a: "いいえ、無料版で受講できる内容となっておりますので、課金は不要です。" },
         { q: "全10回すべて受講しないといけないでしょうか？", a: "いいえ。各回は1講座完結の独立したカリキュラムとなっています。ご自身の学びたいテーマや、スケジュールが合う回のみ単発（1回単位）で自由にご受講いただけます。" },
         { q: "受講料の支払い方法や領収書の発行について教えてください。", a: "事前オンラインクレジットカード決済、または当日会場での現金お支払いに対応しています。法人名義での領収書・請求書対応が必要な場合は、お申し込み時にお申し付けください。" }
       ],
       en: [
-        { q: "I'm not confident with computers. Can I still join?", a: "Absolutely. If you can type text and navigate a web browser, you do not need any advanced IT background. Since it's a small, face-to-face workshop, we support you closely." },
-        { q: "What do I need to bring to class?", a: "Please bring your own notebook laptop (capable of connecting to Wi-Fi) and writing utensils. You will practice directly on your browser during the sessions." },
+        { q: "I'm not confident with computers. Can I still join?", a: "Absolutely. If you can type text and navigate a web browser, you do not need any advanced IT background. We offer solid support both in-person and online, so please join us with peace of mind." },
+        { q: "What do I need to bring to class?", a: "[Required items]<br>1. Notebook laptop (capable of connecting to Wi-Fi)<br>2. Google Account<br>3. Writing utensils<br><br>You will practice directly on your browser during the sessions." },
+        { q: "Is a Google account required?", a: "Yes, we ask that you create a Google account prior to participating." },
+        { q: "Do I need to pay for AI subscriptions?", a: "No, the free versions are sufficient for the course, so no paid subscriptions are required." },
         { q: "Do I have to register for all 10 sessions?", a: "No. Each session is standalone and fully complete. You can choose to register only for specific topics that interest you or fit your schedule." },
         { q: "What are the payment methods and can I get an invoice?", a: "We support pre-registration online credit card payment or on-site payment. Corporate receipts or invoices can also be provided upon request." }
       ]
@@ -2921,11 +3015,11 @@
       const mode = active ? 'withAi' : 'noAi';
       const data = chartData[mode];
 
-      const overtimeUnit = currentLang === 'ja' ? '時間' : ' hrs';
-      const speedUnit = currentLang === 'ja' ? '倍' : 'x Boost';
-
-      animateCounter('valOvertime', parseInt(document.getElementById('valOvertime').textContent), data.overallOvertime, overtimeUnit);
-      animateCounter('valSpeed', parseFloat(document.getElementById('valSpeed').textContent), data.overallSpeed, speedUnit, true);
+      const shortageUnit = currentLang === 'ja' ? '万人' : 'M';
+      const elShortage = document.getElementById('valShortage');
+      if (elShortage) {
+        animateCounter('valShortage', parseInt(elShortage.textContent), data.overallShortage, shortageUnit);
+      }
       updateChart(mode);
     }
 
@@ -2953,23 +3047,21 @@
       const chartHeight = chartRect.height;
       const chartWidth = chartRect.width;
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 3; i++) {
         const bar = document.getElementById(`bar${i}`);
         const dot = document.getElementById(`dot${i}`);
         if (!bar || !dot) continue;
-        const speedVal = data.speed[i];
+        
+        const shortageVal = data.shortage[i];
 
-        // Map productivity (speed) height to chart percentages
-        const barHeight = 15 + ((speedVal - 0.5) / 4.0) * 80;
+        // 700万人 = 100%
+        const barHeight = Math.max((shortageVal / 700) * 100, 2);
         bar.style.height = `${barHeight}%`;
+        dot.style.bottom = `${barHeight}%`;
 
-        // Overtime hours mapping (overtime increases over time for No-AI, and decreases for With-AI)
-        const overtimeVal = data.overtime[i];
-        const dotBottomPercent = (overtimeVal / 100) * 90 + 5;
-        dot.style.bottom = `${dotBottomPercent}%`;
-
-        const x = (i * 0.2 + 0.1) * chartWidth;
-        const y = chartHeight * (1 - (dotBottomPercent / 100));
+        // 3列等間隔配置 (0.33幅で配置)
+        const x = (i * 0.33 + 0.16) * chartWidth;
+        const y = chartHeight * (1 - (barHeight / 100));
         points.push({ x, y });
       }
       const dPath = points.map((p, index) => `${index === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
@@ -2982,17 +3074,14 @@
     function showTooltip(index) {
       const mode = isAiActive ? 'withAi' : 'noAi';
       const data = chartData[mode];
-      const years = currentLang === 'ja' ? ["2026年", "2027年", "2028年", "2029年", "2030年"] : ["Year 2026", "Year 2027", "Year 2028", "Year 2029", "Year 2030"];
+      const years = currentLang === 'ja' ? ["2020年", "2025年", "2030年"] : ["2020", "2025", "2030"];
       const tooltip = document.getElementById('chartTooltip');
-      const overtimeText = currentLang === 'ja' ? "平均残業" : "Avg Overtime";
-      const capacityText = currentLang === 'ja' ? "生産能力" : "Capacity Boost";
-      const hourText = currentLang === 'ja' ? "時間" : " hrs";
-      const timesText = currentLang === 'ja' ? "倍" : "x";
+      const shortageText = currentLang === 'ja' ? "労働力不足" : "Shortage";
+      const unitText = currentLang === 'ja' ? "万人" : "M";
 
       tooltip.innerHTML = `
        <div style="font-weight: 700; margin-bottom: 4px; color:#fff;">${years[index]}</div>
-       <div>${overtimeText}: <span style="color:#ff4d4d; font-weight:700;">${data.overtime[index]}${hourText}</span></div>
-       <div>${capacityText}: <span style="color:var(--yellow); font-weight:700;">${data.speed[index].toFixed(1)}${timesText}</span></div>
+       <div>${shortageText}: <span style="color:var(--yellow); font-weight:700;">${data.shortage[index]}${unitText}</span></div>
      `;
       const dot = document.getElementById(`dot${index}`);
       const parent = document.querySelector('.data-visual');
@@ -3025,7 +3114,7 @@
     <button class="floating-banner-close" onclick="document.getElementById('floatingBanner').style.display='none'" aria-label="Close">×</button>
     <div class="floating-banner-text">
       <span data-i18n="floating-badge">＼定員に達し次第終了／</span><br>
-      <div data-i18n="floating-text">仕事が終わらないのは、<br>AIを知らないから。</div>
+      <div data-i18n="floating-text">あなただけの<br><span style="color: var(--yellow); font-size: 1.5em; font-weight: 900;"><ruby>A<rt style="font-weight: 900; font-size: 0.2em; color: var(--yellow); text-align: center;">あ</rt></ruby><ruby>I<rt style="font-weight: 900; font-size: 0.2em; color: var(--yellow); text-align: center;">い</rt></ruby>棒</span><br>手に入れよう</div>
     </div>
     <button class="btn btn-yellow arrow-r" onclick="window.open('https://ercll.u-ryukyu.narayun.jp', '_blank')" data-i18n="floating-btn">今すぐ申し込む</button>
   </div>
